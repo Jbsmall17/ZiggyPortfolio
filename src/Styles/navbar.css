@@ -1,0 +1,180 @@
+nav.desktop-nav{
+    display: none;
+}
+nav.mobile-nav{
+    width: 100%;
+    height: 6.875rem;
+    padding-block-start: 3.375rem;
+    padding-inline-start: 3.0rem;
+    margin-block-end: 3.25rem;
+}
+div.mobile-nav-links{
+    position: relative;
+}
+div.mobile-link{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+}
+div.mobile-link > img{
+    height: 100%;
+    width: 100%;
+}
+div.mobile-container{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    transform: translateX(-100%);
+    transition: all ease 0.5s;
+    /* grid-template-rows: 33.33% 33.33%, 33.33%; */
+}
+div.mobile-container.open{
+    transform: translateX(0%);
+}
+div.mobile-container > div{
+    width: 100%;
+    height: 33.3vh;
+    /* height:100%; */
+}
+div.mobile-container > div.meet, div.mobile-container > div.insights,
+div.mobile-container > div.talk{
+    background-color: var(--primary-color-1);
+    color: var(--primary-color-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.mobile-container > div.talk > p,div.mobile-container > div.cancel > div{
+    width: 89px;
+    height: 89px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+div.mobile-container > div.cancel > div{
+    border: 1px solid #E00F0F;
+}
+div.mobile-container > div.portfolio,div.mobile-container > div.products,
+div.mobile-container > div.cancel{
+    background-color: var(--primary-color-2);
+    color: var(--primary-color-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width:768px) {
+    nav.desktop-nav{
+        /* height: 5.5625rem; */
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    nav.mobile-nav{
+        display: none;
+    }
+    div.navbar-links{
+        display: flex;
+        /* gap: 2.5625rem; */
+        justify-content: space-around;
+        margin-block-start: 1.875rem;
+        margin-block-end: 5.625rem;
+        max-width: 30rem;
+        width: 80%;
+        border-radius: .75rem;
+        background: rgba(24, 24, 24, 0.70);
+        backdrop-filter: blur(.25rem);
+    }
+    div.navbar-links > div.links{
+        height: 3.5rem;
+        width: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #fff;
+    }
+    div.links > img{
+        height: 2.5rem;
+        width: 1.5rem;
+    }
+    div.chat{
+        position: absolute;
+        top: 1.875rem;
+        right: 3.75rem;
+        height: 3.5rem;
+        width: 3.5rem;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .75rem;
+        font-weight: 600;
+        border-radius: 50%;
+        border: 1px solid #fff;
+    
+    }    
+}
+
+@media screen and (min-width:1024px) {
+    nav.desktop-nav{
+        /* height: 5.5625rem; */
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    div.navbar-links{
+        display: flex;
+        /* gap: 2.5625rem; */
+        justify-content: space-around;
+        margin-block-start: 1.875rem;
+        margin-block-end: 5.625rem;
+        max-width: 35.875rem;
+        width: 80%;
+        border-radius: .75rem;
+        background: rgba(24, 24, 24, 0.70);
+        backdrop-filter: blur(.25rem);
+    }
+    div.navbar-links > div.links{
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #fff;
+    }
+    div.links > img{
+        height: 3.125rem;
+        width: 1.5rem;
+    }
+    div.chat{
+        position: absolute;
+        top: 1.875rem;
+        right: 3.75rem;
+        height: 5rem;
+        width: 5rem;
+        color: #fff;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--font-14);
+        font-weight: 600;
+        border-radius: 50%;
+        border: 1px solid #fff;
+    
+    }    
+}

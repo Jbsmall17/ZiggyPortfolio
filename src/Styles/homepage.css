@@ -1,0 +1,574 @@
+div.homepage > p.name {
+    font-family: better-yesterday;
+    font-size: 4.75rem;
+    margin-block-end: 2rem;
+    color: #FFF;
+    text-align: center;
+  }
+  div.gif-container{
+    width: 100% - 130px;
+    position: relative;
+    padding-block-end: 10rem;
+}
+div.gif-container > img.gif{
+    position: relative;
+    z-index: 2;
+    max-width: 39.5625rem;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 27.5rem;
+}
+div.gif-container > img.img{
+    display: none;
+    height: 41rem;
+    width: 23.125rem;
+    position: absolute;
+}
+img.backdrop1{
+    left:0;
+    top:0;
+}
+img.backdrop2{
+    right:0;
+    top:0;
+}
+div.mission{
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 2.5rem; */
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 3.75rem;
+}
+div.mission > div{
+    flex: 1
+}
+div.mission > div.div01{
+    flex: 0.75;
+}
+div.mission > div > img{
+    width: 100%
+}
+div.div02 > p.para01{
+    color: #000;
+    font-size: var(--font-24);
+    margin-block-end: 1.125rem;
+    font-weight: 600;
+    text-align: center;
+
+}
+div.div02 > p.para01 > span{
+    font-family: better-yesterday;
+}
+div.div02 > p.para02{
+    color: #000;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-14);
+    margin-block-end: 1rem;
+    font-weight: 600;
+}
+div.vector-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+svg.svg2{
+    /* position: relative; */
+    transform: translateY(.6875rem);
+}
+svg.svg3{
+    transform: translateY(-2rem) translateX(.5rem);
+}
+div.experience{
+    /* height: 28rem; */
+    background-image:url("../assets/Homepage/biyi_bg.png") ;
+    background-repeat:no-repeat;
+    background-position: center;
+    padding-inline: 2rem;
+    padding-block-start: 3rem;
+    margin-block-end: 0rem;
+}
+div.exp-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 3.4375rem; */
+    justify-content: space-between;
+    color: var(--primary-color-2);
+    margin-bottom: 3.375rem;
+}
+div.exp-container > div:not(:nth-of-type(2),:nth-of-type(4)){
+    padding: .25rem;
+    padding-inline: 1.0rem;
+}
+div.line1,div.line2{
+    height: 6.25rem;
+    width: .125rem;
+    border: .125rem solid var(--primary-color-2);
+}
+div.exp-container > div > p:nth-of-type(1){
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+div.exp-container > div > p:nth-of-type(2){
+    font-size: .625rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+div.view-portfolio{
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    font-size: var(--font-14);
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: .125rem solid var(--primary-color-2);
+    margin: 0 auto;
+}
+div.design-it{
+    height: 30rem;
+    background: url("../assets/Homepage/Back_drop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 1.5rem;
+    position: relative;
+}
+div.container{
+    max-width: 20.8125rem;
+    width: 60%;
+    margin: 0 auto;
+    height: 15.625rem;
+    color: var(--primary-color-2);
+    padding-block: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div.container > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.container > div > p:nth-of-type(1){
+    color: var(--primary-color-2);
+    font-size: var(--font-48);
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+div.container > div > p:nth-of-type(2){
+    color: var(--primary-color-2);
+    font-family: better-yesterday;
+    font-size: var(--font-96);
+    font-weight: 400;
+    flex: 2;
+    text-align: center;
+}
+div.lets-go-together{
+    position: absolute;
+    top:60%;
+    right: 50%;
+    transform: translateX(50%);
+    color: #060606;
+    text-align: center;
+    font-size: var(--font-16);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-2);
+    border-radius: 50%;
+    width:6.5625rem;
+    height: 6.5625rem;
+}    
+
+
+@media screen and (min-width: 768px) {
+    div.homepage > p.name{
+        font-family: better-yesterday;
+        color: #FFF;
+        font-size: var(--font-70);
+        font-weight: 400;
+        text-align: center;
+        margin-block-end: .5rem;
+    }
+    
+    div.gif-container{
+        width: calc(100% - 130px);
+        margin: 0 auto;
+        position: relative;
+        padding-block-end: 6.25rem;
+    }
+    div.gif-container > img.img{
+        display: block;
+        height: 31.25rem;
+        width: 23.125rem;
+        position: absolute;
+    }
+    img.backdrop1{
+        left:0;
+        top:0;
+    }
+    img.backdrop2{
+        right:0;
+        top:0;
+    }
+    div.gif-container > img.gif{
+        position: relative;
+        z-index: 2;
+        max-width: 39.5625rem;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        height: 34.375rem;
+    }
+    
+    div.mission{
+        background: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        padding-inline-start: 0;
+        padding-inline-end: 0;
+        padding-block-end: 3.75rem;
+    }
+    div.mission > div{
+        flex: 1
+    }
+    div.mission > div > img{
+        width: 100%
+    }
+    div.div02 > p.para01{
+        color: #000;
+        font-size: 1.75rem;
+        font-weight: 600;
+        text-align: center;
+        margin-block-end: 1.875rem;
+
+    }
+    div.div02 > p.para01 > span{
+        font-family: better-yesterday;
+    }
+    div.div02 > p.para02{
+        color: #000;
+        text-align: center;
+        font-size: var(--font-16);
+        font-weight: 600;
+        margin-block-end: 1.25rem;
+        text-align: center;
+    }
+    div.vector-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    svg.svg2{
+        /* position: relative; */
+        transform: translateY(.6875rem);
+    }
+    svg.svg3{
+        transform: translateY(-2rem) translateX(.5rem);
+    }
+    div.experience{
+        height: 28rem;
+        background-image:url("../assets/Homepage/biyi_bg.png") ;
+        background-repeat:no-repeat;
+        background-position: center;
+        padding-inline: 2.8125rem;
+        padding-block-start: 3.75rem;
+    }
+    div.exp-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* gap: 3.4375rem; */
+        justify-content: space-between;
+        color: var(--primary-color-2);
+        margin-bottom: 3.75rem;
+    }
+    div.exp-container > div:not(:nth-of-type(2),:nth-of-type(4)){
+        padding: .625rem;
+        padding-inline: 1.0rem;
+    }
+    div.line1,div.line2{
+        height: 6.25rem;
+        width: .125rem;
+        border: .125rem solid var(--primary-color-2);
+    }
+    div.exp-container > div > p:nth-of-type(1){
+        text-align: center;
+        font-size:var(--font-48);
+        font-weight: 500;
+    }
+    div.exp-container > div > p:nth-of-type(2){
+        font-size: var(--font-16);
+        font-weight: 500;
+    }
+    div.view-portfolio{
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 50%;
+        font-size: var(--font-18);
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: .125rem solid var(--primary-color-2);
+        margin: 0 auto;
+    }
+    div.design-it{
+        height: 46.875rem;
+        background: url("../assets/Homepage/Back_drop.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 1.5rem;
+        position: relative;
+    }
+    div.container{
+        max-width: 20.8125rem;
+        width: 60%;
+        margin: 0 auto;
+        height: 15.625rem;
+        color: var(--primary-color-2);
+        padding-block: 1.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    div.container > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div.container > div > p:nth-of-type(1){
+        color: var(--primary-color-2);
+        font-size: var(--font-48);
+        font-weight: 500;
+        flex: 1;
+        text-align: center;
+    }
+    div.container > div > p:nth-of-type(2){
+        color: var(--primary-color-2);
+        font-family: better-yesterday;
+        font-size: var(--font-96);
+        font-weight: 400;
+        flex: 2;
+        text-align: center;
+    }
+    div.lets-go-together{
+        position: absolute;
+        top:12.5rem;
+        right: 9.375rem;
+        color: #060606;
+        text-align: center;
+        font-size: var(--font-16);
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color-2);
+        border-radius: 50%;
+        width:6.5625rem;
+        height: 6.5625rem;
+    }    
+}
+@media screen and (min-width: 1024px){
+div.homepage > p.name{
+    font-family: better-yesterday;
+    color: #FFF;
+    font-size: var(--font-70);
+    font-weight: 400;
+    text-align: center;
+    margin-block-end: .5rem;
+}
+
+div.gif-container{
+    width: calc(100% - 130px);
+    margin: 0 auto;
+    position: relative;
+    padding-block-end: 6.25rem;
+}
+div.gif-container > img.img{
+    height: 41rem;
+    width: 23.125rem;
+    position: absolute;
+}
+img.backdrop1{
+    left:0;
+    top:0;
+}
+img.backdrop2{
+    right:0;
+    top:0;
+}
+div.gif-container > img.gif{
+    position: relative;
+    z-index: 2;
+    max-width: 39.5625rem;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 41.1875rem;
+}
+
+div.mission{
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    padding-inline-start: 3.75rem;
+    padding-inline-end: 12.5rem;
+    padding-block-end: 3.75rem;
+}
+div.mission > div{
+    flex: 1
+}
+div.mission > div > img{
+    width: 100%
+}
+div.div02 > p.para01{
+    color: #000;
+font-size: var(--font-32);
+font-weight: 600;
+margin-block-end: 1.875rem;
+}
+div.div02 > p.para01 > span{
+    font-family: better-yesterday;
+}
+div.div02 > p.para02{
+    color: #000;
+    text-align: center;
+    font-size: var(--font-18);
+    font-weight: 600;
+    margin-block-end: 1.25rem;
+}
+div.vector-img{
+    display: flex;
+    align-items: center;
+}
+svg.svg2{
+    /* position: relative; */
+    transform: translateY(.6875rem);
+}
+svg.svg3{
+    transform: translateY(-2rem) translateX(.5rem);
+}
+div.experience{
+    height: 33rem;
+    background-image:url("../assets/Homepage/biyi_bg.png") ;
+    background-repeat:no-repeat;
+    background-position: center;
+    padding-inline: 4.0625rem;
+    padding-block-start: 5.625rem;
+    margin-block-end: 1.5625rem;
+}
+div.exp-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 3.4375rem; */
+    justify-content: space-between;
+    color: var(--primary-color-2);
+    margin-bottom: 5.625rem;
+}
+div.exp-container > div:not(:nth-of-type(2),:nth-of-type(4)){
+    padding: .625rem;
+    padding-inline: 1.5rem;
+}
+div.line1,div.line2{
+    height: 6.25rem;
+    width: .125rem;
+    border: .125rem solid var(--primary-color-2);
+}
+div.exp-container > div > p:nth-of-type(1){
+    text-align: center;
+    font-size:var(--font-64);
+    font-weight: 500;
+}
+div.exp-container > div > p:nth-of-type(2){
+    font-size: var(--font-20);
+    font-weight: 500;
+}
+div.view-portfolio{
+    width: 8.125rem;
+    height: 8.125rem;
+    border-radius: 50%;
+    font-size: var(--font-24);
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .125rem solid var(--primary-color-2);
+    margin: 0 auto;
+}
+div.design-it{
+    height: 46.875rem;
+    background: url("../assets/Homepage/Back_drop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 1.875rem;
+    position: relative;
+}
+div.container{
+    max-width: 20.8125rem;
+    width: 60%;
+    margin: 0 auto;
+    height: 15.625rem;
+    color: var(--primary-color-2);
+    padding-block: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div.container > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.container > div > p:nth-of-type(1){
+    color: var(--primary-color-2);
+    font-size: var(--font-48);
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+div.container > div > p:nth-of-type(2){
+    color: var(--primary-color-2);
+    font-family: better-yesterday;
+    font-size: var(--font-96);
+    font-weight: 400;
+    flex: 2;
+    text-align: center;
+}
+div.lets-go-together{
+    position: absolute;
+    top:12.5rem;
+    right: 9.375rem;
+    color: #060606;
+    text-align: center;
+    font-size: var(--font-16);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-2);
+    border-radius: 50%;
+    width:6.5625rem;
+    height: 6.5625rem;
+}
+}

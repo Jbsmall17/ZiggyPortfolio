@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --primary-color-1: #000;
+  --primary-color-2 :#fff;
+  --secondary-color: #fcfcfc;
+  --font-14: .875rem ;
+  --font-16: 1rem;
+  --font-18: 1.125rem;
+  --font-20: 1.25rem;
+  --font-24: 1.5rem;
+  --font-32: 2rem;
+  --font-40: 2.5rem;
+  --font-48: 3rem;
+  --font-64: 4rem;
+  --font-70: 4.375rem;
+  --font-96: 6rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
+
+@font-face {
+  font-family: better-yesterday;
+  src: url(./assets/better_yesterday/Better\ Yesterday.otf);
 }
+@font-face {
+  font-family: better-yesterday-italic;
+  src: url(./assets/better_yesterday/Better\ Yesterday\ italic.otf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+div#root{
+  background-color:var(--primary-color-1);;
+}
+
+
