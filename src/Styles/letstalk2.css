@@ -1,0 +1,19 @@
+div.lettalk2{
+    margin-top: 9.375rem;
+}
+div.lettalk2 > select{
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 0px 1rem 1rem;
+    border-radius: .375rem;
+    border: .0625rem solid #FFF;
+    max-width: 25rem;
+    width: 70%;
+    background-color: transparent;
+    color:#9B9B9B;
+    margin-bottom: 3.5625rem;
+}
+div.lettalk2 > select > option{
+    font-size: 1rem;
+    font-weight: 400;
+}

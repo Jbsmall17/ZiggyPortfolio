@@ -105,7 +105,7 @@ div.mobile-container > div.cancel{
         border-radius: 50%;
         border: 1px solid #fff;
     }
-    div.links > img{
+    div.links  img{
         height: 2.5rem;
         width: 1.5rem;
     }
@@ -156,9 +156,10 @@ div.mobile-container > div.cancel{
         border-radius: 50%;
         border: 1px solid #fff;
     }
-    div.links > img{
+    div.links  img{
         height: 3.125rem;
         width: 1.5rem;
+        cursor: pointer;
     }
     div.chat{
         position: absolute;

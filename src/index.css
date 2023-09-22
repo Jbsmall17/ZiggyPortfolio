@@ -32,8 +32,10 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+body{
+  width: 100%;
+}
 div#root{
   background-color:var(--primary-color-1);;
+  width: 100%;
 }
-
-

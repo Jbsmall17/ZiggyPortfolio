@@ -1,0 +1,172 @@
+div.design-it{
+    height: 30rem;
+    background: url("../assets/Homepage/Back_drop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 1.5rem;
+    position: relative;
+}
+div.container{
+    max-width: 20.8125rem;
+    width: 60%;
+    margin: 0 auto;
+    height: 15.625rem;
+    color: var(--primary-color-2);
+    padding-block: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div.container > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.container > div > p:nth-of-type(1){
+    color: var(--primary-color-2);
+    font-size: 2.1875rem;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+div.container > div > p:nth-of-type(2){
+    color: var(--primary-color-2);
+    font-family: better-yesterday;
+    font-size:  4.375rem;
+    font-weight: 400;
+    flex: 2;
+    text-align: center;
+}
+div.lets-go-together{
+    position: absolute;
+    top:60%;
+    right: 50%;
+    transform: translateX(50%);
+    color: #060606;
+    text-align: center;
+    font-size: var(--font-16);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-2);
+    border-radius: 50%;
+    width:6.5625rem;
+    height: 6.5625rem;
+} 
+
+@media screen and (min-width: 768px){
+    div.design-it{
+        height: 46.875rem;
+        background: url("../assets/Homepage/Back_drop.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 1.5rem;
+        position: relative;
+    }
+    div.container{
+        max-width: 20.8125rem;
+        width: 60%;
+        margin: 0 auto;
+        height: 15.625rem;
+        color: var(--primary-color-2);
+        padding-block: 1.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    div.container > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div.container > div > p:nth-of-type(1){
+        color: var(--primary-color-2);
+        font-size: 2.625rem;
+        font-weight: 500;
+        flex: 1;
+        text-align: center;
+    }
+    div.container > div > p:nth-of-type(2){
+        color: var(--primary-color-2);
+        font-family: better-yesterday;
+        font-size: 5.25rem;
+        font-weight: 400;
+        flex: 2;
+        text-align: center;
+    }
+    div.lets-go-together{
+        position: absolute;
+        top:12.5rem;
+        right: 9.375rem;
+        color: #060606;
+        text-align: center;
+        font-size: var(--font-16);
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color-2);
+        border-radius: 50%;
+        width:6.5625rem;
+        height: 6.5625rem;
+    }   
+}
+
+@media screen and (min-width: 1024px){
+    div.design-it{
+        height: 46.875rem;
+        background: url("../assets/Homepage/Back_drop.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 1.875rem;
+        position: relative;
+    }
+    div.container{
+        max-width: 20.8125rem;
+        width: 60%;
+        margin: 0 auto;
+        height: 15.625rem;
+        color: var(--primary-color-2);
+        padding-block: 1.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    div.container > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    div.container > div > p:nth-of-type(1){
+        color: var(--primary-color-2);
+        font-size: var(--font-48);
+        font-weight: 500;
+        flex: 1;
+        text-align: center;
+    }
+    div.container > div > p:nth-of-type(2){
+        color: var(--primary-color-2);
+        font-family: better-yesterday;
+        font-size: var(--font-96);
+        font-weight: 400;
+        flex: 2;
+        text-align: center;
+    }
+    div.lets-go-together{
+        position: absolute;
+        top:12.5rem;
+        right: 9.375rem;
+        color: #060606;
+        text-align: center;
+        font-size: var(--font-16);
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-color-2);
+        border-radius: 50%;
+        width:6.5625rem;
+        height: 6.5625rem;
+    }
+}

@@ -4,6 +4,7 @@ import queen from "../assets/Homepage/Queen.png"
 import logo from "../assets/Homepage/logo.png"
 import knight from "../assets/Homepage/Knight.png"
 import pawn from "../assets/Homepage/Pawn.png"
+import { NavLink } from 'react-router-dom'
 import "../Styles/navbar.css"
 
 export default function Navbar() {
@@ -19,13 +20,19 @@ export default function Navbar() {
             <img src={queen} alt='queen' />
         </div>
         <div className='links'>
-            <img src={king} alt='king' />
+            <NavLink to="/biyi">
+                <img src={king} alt='king' />
+            </NavLink>
         </div>
         <div className='links'>
-            <img src={logo} alt='logo' />
+            <NavLink to="/">
+                <img src={logo} alt='logo' />
+            </NavLink>
         </div>
         <div className='links'>
-            <img src={knight} alt='knight' />
+            <NavLink to="/letstalk">
+                <img src={knight} alt='knight' />
+            </NavLink>
         </div>
         <div className='links'>
             <img src={pawn} alt='pawn' />
@@ -92,9 +99,9 @@ export default function Navbar() {
                 <div className='talk'> 
                     <p>Let's Talk</p>
                 </div>
-                <div className='cancel'>
+                <div className='cancel' onClick={navbarHandler} style={{cursor: "pointer"}}>
                     <div>
-                    <svg onClick={navbarHandler} style={{cursor: "pointer"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <g clip-path="url(#clip0_706_2891)">
                             <path d="M24 3.752L19.577 0L11.806 9.039L4.159 0.031L0 4.309C2.285 7.194 5.284 10.212 8.362 13.017L0.197 22.464L1.54 23.951C3.518 22.616 7.521 19.578 11.745 15.993C16.049 19.663 20.051 22.656 21.974 23.999L23.423 22.721L15.169 12.997C18.456 10.024 21.753 6.643 24 3.752Z" fill="#E00F0F"/>
                         </g>
