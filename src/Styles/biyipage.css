@@ -2,6 +2,8 @@ div.meet-biyi{
     display: flex;
     position: relative;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: var(--primary-color-2);
     margin: 0 9.375rem;
 }
@@ -23,8 +25,14 @@ div.meet-biyi{
 @media screen and (max-width:425px) {
     div.meet-biyi{
         height: 25rem;
+        margin: 0 1rem;
     }
 }
+/* @media screen and (max-width:375px){
+    div.meet-biyi{
+        margin: 0 0.75rem;
+    }   
+} */
 div.meet-biyi-01{
     position: relative;
     flex: 1;
@@ -98,6 +106,12 @@ div.meet-biyi-02 > p{
     div.meet-biyi-02 > p{
         font-size: .625rem;
         font-weight: 400;
+    }
+}
+@media screen and (max-width:375px){
+    div.meet-biyi-02 > p{
+        /* width:90%; */
+        /* font-size: 0.5rem; */
     }
 }
 div.services-container{

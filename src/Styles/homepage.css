@@ -1,3 +1,6 @@
+div.homepage{
+    width: 100%;
+}
 div.homepage > p.name {
     font-family: better-yesterday;
     font-size: 4.75rem;

@@ -21,6 +21,7 @@ div.mobile-link{
 div.mobile-link > img{
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 div.mobile-container{
     position: absolute;
@@ -52,7 +53,10 @@ div.mobile-container > div.talk{
     justify-content: center;
     align-items: center;
 }
-div.mobile-container > div.talk > p,div.mobile-container > div.cancel > div{
+div.mobile-container > div > svg, div.mobile-container > div > p{
+    cursor: pointer;
+}
+div.mobile-container > div.talk  p,div.mobile-container > div.cancel > div{
     width: 89px;
     height: 89px;
     border-radius: 50%;

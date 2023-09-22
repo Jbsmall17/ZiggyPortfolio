@@ -4,10 +4,11 @@ import queen from "../assets/Homepage/Queen.png"
 import logo from "../assets/Homepage/logo.png"
 import knight from "../assets/Homepage/Knight.png"
 import pawn from "../assets/Homepage/Pawn.png"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import "../Styles/navbar.css"
 
 export default function Navbar() {
+    const navigate = useNavigate()
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
     function navbarHandler(){
         setIsMobileNavbarOpen(prev => !prev)
@@ -50,12 +51,12 @@ export default function Navbar() {
                 <rect width="18" height="3" transform="matrix(-1 0 0 1 18 14)" fill="white"/>
             </svg>
             <div className='mobile-link'>
-                <img src={logo} alt='logo' />
+                <img src={logo} onClick={()=> navigate("/")} alt='logo' />
             </div>
         </div>
         <div className={ !isMobileNavbarOpen ? 'mobile-container' : 'mobile-container open' }>
                 <div className='meet'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="107" viewBox="0 0 60 107" fill="none">
+                    <svg onClick={()=>{navigate('/biyi')}} xmlns="http://www.w3.org/2000/svg" width="60" height="107" viewBox="0 0 60 107" fill="none">
                     <path d="M54.5833 97.25H5.41667C2.70021 97.25 0.5 99.4324 0.5 102.127C0.5 104.821 2.70021 107.004 5.41667 107.004H54.5833C57.2998 107.004 59.5 104.821 59.5 102.127C59.5 99.4324 57.2998 97.25 54.5833 97.25Z" fill="white"/>
                     <path d="M9.10417 60.3554H50.8958C53.6123 60.3554 55.8125 58.173 55.8125 55.4785C55.8125 52.784 53.6123 50.6016 50.8958 50.6016H9.10417C6.38771 50.6016 4.1875 52.784 4.1875 55.4785C4.1875 58.173 6.38771 60.3554 9.10417 60.3554Z" fill="white"/>
                     <path d="M37.375 66.0014C37.375 64.8188 37.2521 63.5874 37.375 62.3438H22.625C22.7479 63.5874 22.625 64.8188 22.625 66.0014C22.625 78.1937 15.25 95.2629 15.25 95.2629H44.75C44.75 95.2629 37.375 78.1937 37.375 66.0014Z" fill="white"/>
@@ -63,8 +64,8 @@ export default function Navbar() {
                     <path d="M17.7083 41.7675H42.2917C43.6437 41.7675 44.75 40.6702 44.75 39.3291C44.75 37.9879 43.6437 36.8906 42.2917 36.8906H17.7083C16.3562 36.8906 15.25 37.9879 15.25 39.3291C15.25 40.6702 16.3562 41.7675 17.7083 41.7675Z" fill="white"/>
                     <path d="M26.3123 19.5076H33.6873L31.229 10.973L39.8332 13.4115V6.09613L31.229 8.53458L33.6873 0H26.3123L28.7707 8.53458L20.1665 6.09613V13.4115L28.7707 10.973L26.3123 19.5076Z" fill="white"/>
                     <path d="M18.9375 34.9037H41.0625C42.1319 31.7093 43.6315 29.1124 44.2215 27.6615C44.5533 26.8324 44.75 26.3691 44.75 26.3691C44.75 23.6746 38.1494 21.4922 30 21.4922C21.8506 21.4922 15.25 23.6746 15.25 26.3691C15.25 26.3691 15.4467 26.8324 15.7785 27.6615C16.3685 29.1124 17.8681 31.7093 18.9375 34.9037Z" fill="white"/>
-                </svg>
-                <p>Meet ‘Biyi</p>
+                    </svg>
+                    <p>Meet ‘Biyi</p>
                 </div>
                 <div className='portfolio'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="107" viewBox="0 0 48 107" fill="none">
@@ -96,8 +97,8 @@ export default function Navbar() {
                 </svg>
                     <p>Insights</p>
                 </div>
-                <div className='talk'> 
-                    <p>Let's Talk</p>
+                <div className='talk'>
+                    <p onClick={()=>{navigate("/letstalk")}}>Let's Talk</p>
                 </div>
                 <div className='cancel' onClick={navbarHandler} style={{cursor: "pointer"}}>
                     <div>
