@@ -5,10 +5,12 @@ import "../Styles/letstalkpage.css"
 import LetTalk1 from '../components/LetTalk1';
 import LetTalk2 from '../components/LetTalk2';
 import LetTalk3 from '../components/LetTalk3';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Letstalkpage() {
   const [count,setCount] = useState(1);
+  const navigate = useNavigate()
   function countHandler(number,type){
       if(type == "increment"){
         setCount(prev => prev + 1);
@@ -44,9 +46,12 @@ export default function Letstalkpage() {
               )
             :
               (
-                <button 
-                  onClick={()=>{countHandler(1,"notincreasement")}} 
-                  className={ count == 4 ? 'button mount' : 'button' }>
+                <button
+                  className='button mount' 
+                  // onClick={()=>{countHandler(1,"notincreasement")}} 
+                  // className={ count == 4 ? 'button mount' : 'button' }
+                  onClick={()=>{navigate("/")}}
+                  >
                   Home
                 </button>
               )
