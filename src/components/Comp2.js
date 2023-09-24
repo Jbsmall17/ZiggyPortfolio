@@ -6,6 +6,7 @@ export default function Comp2() {
     <div className="design-it">
     <div className="container">
       <div>
+      <div>
         <p>You</p>
         <p>dream it</p>
       </div>
@@ -13,9 +14,10 @@ export default function Comp2() {
         <p>I</p>
         <p>design it</p>
       </div>
-    </div>
-    <div className="lets-go-together">
-      let's go together
+      </div>
+      <div className="lets-go-together">
+        let's go together
+      </div>
     </div>
   </div>
   )

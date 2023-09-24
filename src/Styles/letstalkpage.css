@@ -1,6 +1,6 @@
 div.lets-talk-page{
     position: relative;
-    width:100%; 
+    width:100%;
 }
 div.lets-talk-page-div{
     color: #878787;
@@ -9,6 +9,7 @@ div.lets-talk-page-div > p{
     font-size: var(--font-24);
     text-align: center;
     font-weight: 600;
+    padding-top: 12.5rem;
     margin-bottom: 0.5rem;
 }
 div.lets-talk-page-div > div.circle-container{
@@ -33,20 +34,50 @@ div.socials-container{
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 1.6875rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 18.75rem;
+    width: 3.125rem;
+    transition: all ease 0.5s;
+}
+div.socials-container svg{
+    cursor: pointer;
+}
+div.socials-container svg:hover{
+    width: 47px;
+    height: 47px;
+}
+div.socials-container > a:nth-of-type(1) svg:hover > path{
+    fill: #33CC33;
+}
+div.socials-container > a:nth-of-type(2) svg:hover > path{
+    fill: #CAA1FF
+}
+div.socials-container > a:nth-of-type(3) svg:hover > path{
+    fill:#0077B7
+}
+div.socials-container > a:nth-of-type(4) svg:hover > path{
+    fill:#4176FA
+}
+div.socials-container > a:nth-of-type(5) svg:hover > path{
+    fill:#FF3B30
 }
 @media screen and (max-width:425px) {
     div.socials-container{
         position: absolute;
-        right: 1.0rem;
-        top:50%;
-        transform: translateY(-50%);
+        right:0;
+        left:50%;
+        top: 87%;
+        height: fit-content;
+        transform: translateY(0%) translateX(-50%);
         display: flex;
-        flex-direction: column;
-        gap: 1.6875rem;
+        flex-direction: row;
+        width: 18.75rem;
+        height: 3.125rem
     }   
 }
 button.button{
+    position: relative;
     width: 6.9375rem;
     height: 6.9375rem;
     border: none;
@@ -61,10 +92,96 @@ button.button{
     font-size: var(--font-16);
     cursor: pointer;
 }
-
-button.button.mount{
-    margin-top: 14.375rem;
+button.button::after{
+    content: '';
+    height: 0rem;
+    width: 0rem;
+    background-color: var(--primary-color-2);
+    color: var(--primary-color-1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
 }
-div.chat{
-    display: none;
+button.button:hover::after{
+    content: 'Proceed';
+    font-size: var(--font-16);
+    width: 6.5rem;
+    height: 6.5rem;
+}
+button.button.mount{
+    /* margin-top: 14.375rem; */
+}
+button.button.mount::after{
+    content: 'Home';
+}
+div.typewriter4{
+    margin: 0 auto;
+    margin-block: 0.5rem;
+    padding: 3rem 2.5rem;
+    max-width: 463px;
+    width: 70%;
+    background: rgba(24, 24, 24, 0.25);
+    border-radius: .3125rem;
+}
+div.typewriter4 > p:nth-of-type(2){
+    font-size: 1.5rem;
+    color: #FFD700;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typewriter4 1s steps(30) 1 1s forwards;
+}
+@media screen and (max-width:425px) {
+    div.typewriter4{
+        margin: 0 auto;
+        margin-block: 0.5rem;
+        padding: 3rem 3rem;
+        max-width: 463px;
+        width: 80%;
+        background: rgba(24, 24, 24, 0.25);
+        border-radius: .3125rem;
+    }
+    div.typewriter4 > p:nth-of-type(2){
+        font-size: 1.0rem;
+    }
+}
+@keyframes typewriter4 {
+    from {
+        width: 0; /* Start with no text */
+    }
+    to {
+        width: 100%; /* Reveal the entire text */
+    }
+}
+div.typewriter4 > p:first-child{
+    font-size: 1.5rem;
+    color: #FFD700;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-inline-start: 6.5rem;
+    animation: typewriter5 1s steps(30) 1;
+}
+@media screen and (max-width:425px) {
+    div.typewriter4 > p:first-child{
+        font-size: 1.0rem;
+        color: #FFD700;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-inline-start: 3.5rem;
+        animation: typewriter5 1s steps(30) 1;
+    }    
+}
+@keyframes typewriter5 {
+    from {
+        width: 0; /* Start with no text */
+    }
+    to {
+        width: 100%; /* Reveal the entire text */
+    }
 }

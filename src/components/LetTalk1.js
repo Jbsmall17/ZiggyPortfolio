@@ -39,6 +39,10 @@ export default function LetTalk1() {
 
   return (
     <div className='lettalk1'>
+      <div className='typewriter'>
+        <p>Hello, I Would to connect with you</p>
+        
+      </div>
       <input 
         type='text' 
         placeholder='kindly enter email or company email'  

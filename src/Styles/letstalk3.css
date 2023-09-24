@@ -1,8 +1,44 @@
+div.typewriter3{
+    margin: 0 auto;
+    margin-block: 0.5rem;
+    /* text-align: center; */
+    padding: 3rem 2rem;
+    max-width: 463px;
+    width: 80%;
+    background: rgba(24, 24, 24, 0.25);
+    border-radius: .3125rem;
+}
+div.typewriter3 > p{
+    font-size: 1.5rem;
+    color: #FFD700;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter3 1s steps(30) 1;
+}
+@media screen and (max-width: 425px) {
+    div.typewriter3{
+        margin: 0 auto;
+        margin-block: 0.5rem;
+        /* text-align: center; */
+        padding: 3rem 1rem;
+    }
+    div.typewriter3 > p{
+        font-size: 1.0rem;
+    }
+}
+@keyframes typewriter3 {
+    from {
+        width: 0; /* Start with no text */
+    }
+    to {
+        width: 100%; /* Reveal the entire text */
+    }
+}
 div.lettalk3 >input{
     display:  block;
-    margin: 8.75rem auto 3.875rem auto;
+    margin: 0 auto 3.875rem auto;
     max-width: 28.9375rem;
-    width: 70%;
+    width: 80%;
     padding: 1rem 0px 1rem 1rem;
     border-radius: .375rem;
     border: 1px solid #FFF;

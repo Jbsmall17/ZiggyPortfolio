@@ -3,33 +3,50 @@ div.design-it{
     background: url("../assets/Homepage/Back_drop.png");
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 1.5rem;
+    /* background-size: cover; */
+    transition: all ease 0.5s;
+}
+
+div.container{
+    /* max-width: 20.8125rem; */
+    /* width: 60%; */
+    /* margin: 0 auto; */
+    height: 60%;
+    color: var(--primary-color-2);
+    /* padding-block: 1.875rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
-div.container{
-    max-width: 20.8125rem;
-    width: 60%;
-    margin: 0 auto;
-    height: 15.625rem;
-    color: var(--primary-color-2);
-    padding-block: 1.875rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+div.container:hover{
+    background: url("../assets/Homepage/You\ dream\ it_Biyi\ Aroloye.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }
-div.container > div{
+div.container > div:nth-of-type(1){
+    max-width: 20.8125rem; 
+    width: 60%;
+}
+div.container > div > div{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-div.container > div > p:nth-of-type(1){
+
+div.container > div > div >  p:nth-of-type(1){
     color: var(--primary-color-2);
     font-size: 2.1875rem;
     font-weight: 500;
     flex: 1;
     text-align: center;
 }
-div.container > div > p:nth-of-type(2){
+div.container:hover  div > p:nth-of-type(1),
+div.container:hover  div > p:nth-of-type(2){
+    color: var(--primary-color-1);
+}
+div.container > div > div > p:nth-of-type(2){
     color: var(--primary-color-2);
     font-family: better-yesterday;
     font-size:  4.375rem;
@@ -39,8 +56,8 @@ div.container > div > p:nth-of-type(2){
 }
 div.lets-go-together{
     position: absolute;
-    top:60%;
-    right: 50%;
+    bottom:20%;
+    right: 10%;
     transform: translateX(50%);
     color: #060606;
     text-align: center;
@@ -51,43 +68,52 @@ div.lets-go-together{
     align-items: center;
     background-color: var(--primary-color-2);
     border-radius: 50%;
-    width:6.5625rem;
-    height: 6.5625rem;
+    width:5.0rem;
+    height: 5.0rem;
 } 
-
+div.container:hover div.lets-go-together{
+    color: var(--primary-color-2);
+    background-color:#060606;
+}
 @media screen and (min-width: 768px){
     div.design-it{
         height: 46.875rem;
         background: url("../assets/Homepage/Back_drop.png");
         background-position: center;
+        /* background-size: cover; */
         background-repeat: no-repeat;
-        padding-top: 1.5rem;
-        position: relative;
+        transition: all ease 0.5s;
     }
     div.container{
-        max-width: 20.8125rem;
-        width: 60%;
-        margin: 0 auto;
-        height: 15.625rem;
+        /* max-width: 20.8125rem; */
+        /* width: 60%; */
+        /* margin: 0 auto; */
+        height: 60%;
         color: var(--primary-color-2);
-        padding-block: 1.875rem;
+        /* padding-block: 1.875rem; */
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        position: relative;
     }
-    div.container > div{
+    div.container > div:nth-of-type(1){
+        max-width: 20.8125rem; 
+        width: 60%;
+    }
+    div.container > div > div{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    div.container > div > p:nth-of-type(1){
+    div.container > div > div > p:nth-of-type(1){
         color: var(--primary-color-2);
         font-size: 2.625rem;
         font-weight: 500;
         flex: 1;
         text-align: center;
     }
-    div.container > div > p:nth-of-type(2){
+    div.container > div > div > p:nth-of-type(2){
         color: var(--primary-color-2);
         font-family: better-yesterday;
         font-size: 5.25rem;
@@ -97,8 +123,8 @@ div.lets-go-together{
     }
     div.lets-go-together{
         position: absolute;
-        top:12.5rem;
-        right: 9.375rem;
+        bottom:20%;
+        right: 20%;
         color: #060606;
         text-align: center;
         font-size: var(--font-16);
@@ -119,33 +145,39 @@ div.lets-go-together{
         background: url("../assets/Homepage/Back_drop.png");
         background-position: center;
         background-repeat: no-repeat;
-        padding-top: 1.875rem;
-        position: relative;
+
+        transition: all ease 0.5s;
     }
     div.container{
-        max-width: 20.8125rem;
-        width: 60%;
-        margin: 0 auto;
-        height: 15.625rem;
+        /* position: relative; */
+        /* max-width: 20.8125rem; */
+        /* width: 60%; */
+        /* margin: 0 auto; */
+        height: 60%;
         color: var(--primary-color-2);
-        padding-block: 1.875rem;
+        /* padding-block: 1.875rem; */
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center
     }
-    div.container > div{
+    div.container > div:nth-of-type(1){
+        max-width: 20.8125rem; 
+        width: 60%;
+    }
+    div.container > div > div{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    div.container > div > p:nth-of-type(1){
+    div.container > div > div > p:nth-of-type(1){
         color: var(--primary-color-2);
         font-size: var(--font-48);
         font-weight: 500;
         flex: 1;
         text-align: center;
     }
-    div.container > div > p:nth-of-type(2){
+    div.container > div > div > p:nth-of-type(2){
         color: var(--primary-color-2);
         font-family: better-yesterday;
         font-size: var(--font-96);
@@ -155,8 +187,8 @@ div.lets-go-together{
     }
     div.lets-go-together{
         position: absolute;
-        top:12.5rem;
-        right: 9.375rem;
+        bottom:20%;
+        right: 25%;
         color: #060606;
         text-align: center;
         font-size: var(--font-16);

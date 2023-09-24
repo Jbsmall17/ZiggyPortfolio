@@ -2,6 +2,7 @@
   --primary-color-1: #000;
   --primary-color-2 :#fff;
   --secondary-color: #fcfcfc;
+  --font-12: .75rem ;
   --font-14: .875rem ;
   --font-16: 1rem;
   --font-18: 1.125rem;
@@ -34,6 +35,7 @@
 }
 body{
   width: 100%;
+  overflow-x: hidden;
 }
 div#root{
   background-color:var(--primary-color-1);;

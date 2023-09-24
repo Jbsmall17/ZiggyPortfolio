@@ -3,10 +3,12 @@ nav.desktop-nav{
 }
 nav.mobile-nav{
     width: 100%;
+    position: fixed;
     height: 6.875rem;
     padding-block-start: 3.375rem;
     padding-inline-start: 3.0rem;
     margin-block-end: 3.25rem;
+    z-index: 9
 }
 div.mobile-nav-links{
     position: relative;
@@ -32,12 +34,12 @@ div.mobile-container{
     z-index: 9;
     display: grid;
     grid-template-columns: 50% 50%;
-    transform: translateX(-100%);
+    transform: translateY(-100%);
     transition: all ease 0.5s;
     /* grid-template-rows: 33.33% 33.33%, 33.33%; */
 }
 div.mobile-container.open{
-    transform: translateX(0%);
+    transform: translateY(0%);
 }
 div.mobile-container > div{
     width: 100%;
@@ -65,9 +67,26 @@ div.mobile-container > div.talk  p,div.mobile-container > div.cancel > div{
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 div.mobile-container > div.cancel > div{
     border: 1px solid #E00F0F;
+}
+div.mobile-container > div.cancel > div::after{
+    content: '';
+    width: 0px;
+    height: 0px;
+    position:absolute;
+    background-color: #E00F0F;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    transition: all ease 0.5s;
+}
+div.mobile-container > div.cancel > div:hover::after{
+    width: 70px;
+    height: 70px;
 }
 div.mobile-container > div.portfolio,div.mobile-container > div.products,
 div.mobile-container > div.cancel{
@@ -81,9 +100,11 @@ div.mobile-container > div.cancel{
 @media screen and (min-width:768px) {
     nav.desktop-nav{
         /* height: 5.5625rem; */
-        position: relative;
+        position: fixed;
         display: flex;
         justify-content: center;
+        width: 100%;
+        z-index: 9;
     }
     nav.mobile-nav{
         display: none;
@@ -101,43 +122,117 @@ div.mobile-container > div.cancel{
         backdrop-filter: blur(.25rem);
     }
     div.navbar-links > div.links{
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 4.0rem;
+        width: 4.0rem;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
         border: 1px solid #fff;
+        position: relative;
+    }
+    div.navbar-links > div.links:nth-of-type(3){
+        border: none;
+    }
+    div.navbar-links > div.links:not(:nth-of-type(3))::after{
+        content: '';
+        height: 0rem;
+        width: 0rem;
+        background-color: var(--primary-color-2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all ease 0.5s;
+    }
+    div.navbar-links > div.links:nth-of-type(1):hover::after{
+        content: 'Meet Biyi';
+        font-size: var(--font-14);
+        text-align: center;
+    }
+    div.navbar-links > div.links:nth-of-type(2):hover::after{
+        content: 'Portfolio';
+        font-size: var(--font-12);
+        text-align: center;
+    }
+    div.navbar-links > div.links:nth-of-type(4):hover::after{
+        content: 'Products';
+        font-size: var(--font-12);
+        text-align: center;
+    }
+    div.navbar-links > div.links:nth-of-type(5):hover::after{
+        content: 'Insights';
+        font-size: var(--font-12);
+        text-align: center;
+    }
+    div.navbar-links > div.links:not(:nth-of-type(3)):hover::after{
+        height: 3.75rem;
+        width: 3.75rem;
     }
     div.links  img{
-        height: 2.5rem;
-        width: 1.5rem;
+        height: 3.0rem;
+        width: 2.5rem;
+        cursor: pointer;
+    }
+    div.links:nth-of-type(3)  img{
+        height: 100%;
+        width: 100%
     }
     div.chat{
         position: absolute;
         top: 1.875rem;
         right: 3.75rem;
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 4.0rem;
+        width: 4.0rem;
         color: #fff;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: .75rem;
+        font-size:var(--font-14);
         font-weight: 600;
         border-radius: 50%;
         border: 1px solid #fff;
-    
-    }    
+        cursor: pointer;
+    }
+    div.chat::after{
+        content: '';
+        height: 0rem;
+        width: 0rem;
+        background: var(--primary-color-2);
+        color: var(--primary-color-1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--font-14);
+        transition: all ease 0.5s;
+    }
+    div.chat:hover::after{
+        content: "Let's Talk";
+        /* font-size: var(--font-20); */
+        text-align: center;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
 }
 
 @media screen and (min-width:1024px) {
     nav.desktop-nav{
         /* height: 5.5625rem; */
-        position: relative;
+        position: fixed;
         display: flex;
         justify-content: center;
+        width: 100%;
+        z-index: 9;
     }
     div.navbar-links{
         display: flex;
@@ -159,11 +254,58 @@ div.mobile-container > div.cancel{
         align-items: center;
         border-radius: 50%;
         border: 1px solid #fff;
+        position: relative;
     }
-    div.links  img{
+    div.navbar-links > div.links:nth-of-type(3){
+        border: none;
+    }
+    div.navbar-links > div.links:not(:nth-of-type(3))::after{
+        content: '';
+        height: 0rem;
+        width: 0rem;
+        background-color: var(--primary-color-2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all ease 0.5s;
+    }
+    div.navbar-links > div.links:nth-of-type(1):hover::after{
+        content: 'Meet Biyi';
+        font-size: var(--font-18);
+        text-align: center;
+    }
+    div.navbar-links > div.links:nth-of-type(2):hover::after{
+        content: 'Portfolio';
+        font-size: var(--font-16);
+        text-align: center;
+    }
+    div.navbar-links > div.links:nth-of-type(4):hover::after{
+        content: 'Products';
+        font-size: var(--font-16);
+        text-align: center;
+    }
+    div.navbar-links > div.links:nth-of-type(5):hover::after{
+        content: 'Insights';
+        font-size: var(--font-16);
+        text-align: center;
+    }
+    div.navbar-links > div.links:not(:nth-of-type(3)):hover::after{
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+    div.links:not(:nth-of-type(3))  img{
         height: 3.125rem;
         width: 1.5rem;
         cursor: pointer;
+    }
+    div.links:nth-of-type(3) img{
+        height: 100%;
+        width: 100%
     }
     div.chat{
         position: absolute;
@@ -176,10 +318,33 @@ div.mobile-container > div.cancel{
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: var(--font-14);
+        font-size: var(--font-18);
         font-weight: 600;
         border-radius: 50%;
         border: 1px solid #fff;
-    
-    }    
+    }  
+    div.chat::after{
+        content: '';
+        height: 0rem;
+        width: 0rem;
+        background: var(--primary-color-2);
+        color: var(--primary-color-1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--font-18);
+        transition: all ease 0.5s;
+    }
+    div.chat:hover::after{
+        content: "Let's Talk";
+        /* font-size: var(--font-20); */
+        text-align: center;
+        height: 4.5rem;
+        width: 4.5rem;
+    }
 }

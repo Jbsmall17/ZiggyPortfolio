@@ -11,18 +11,18 @@ import Comp2 from '../components/Comp2'
 export default function Homepage() {
   return (
     <div className='homepage'>
-      <Navbar />
+      <Navbar page={"home"} />
       <p className='name'>
         ‘Biyi Aroloye       
       </p>
       <div className='gif-container'>
-        <img className='img backdrop1' src={back_drop} alt="back drop background " />
-        <img className='gif' src={gif} alt="biyi's gif" />
-        <img className='img backdrop2' src={back_drop} alt="back drop background " />
+        <img className='img backdrop1' loading='lazy' src={back_drop} alt="back drop background " />
+        <img className='gif' src={gif} loading='lazy' alt="biyi's gif" />
+        <img className='img backdrop2' loading='lazy' src={back_drop} alt="back drop background " />
       </div>
       <div className="mission">
         <div className='div01'>
-          <img src={mission_gif} alt="mission gif" />
+          <img src={mission_gif} loading='lazy' alt="mission gif" />
         </div>
         <div className='div02'>
           <p className='para01'>

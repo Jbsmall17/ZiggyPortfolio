@@ -6,10 +6,15 @@ import LetTalk1 from '../components/LetTalk1';
 import LetTalk2 from '../components/LetTalk2';
 import LetTalk3 from '../components/LetTalk3';
 import { useNavigate } from 'react-router-dom';
+import Services from '../components/Services';
 
+// onClick={()=>{countHandler(1,"notincreasement")}}
+// onClick={()=>{countHandler(2,"notincreasement")}}
+// onClick={()=>{countHandler(3,"notincreasement")}}
 
 export default function Letstalkpage() {
   const [count,setCount] = useState(1);
+  const [isServicesClicked, setIsServicesClicked] = useState(false); 
   const navigate = useNavigate()
   function countHandler(number,type){
       if(type == "increment"){
@@ -20,22 +25,29 @@ export default function Letstalkpage() {
   }
   return (
     <div className='lets-talk-page'>
-      <Navbar />
+      <Navbar page={"letstalk"} />
         <div className='lets-talk-page-div'>
           <p>Let’s talk service</p>
           <div className='circle-container'>
-            <div onClick={()=>{countHandler(1,"notincreasement")}} className={count >= 1 ? "clicked": null}></div>
-            <div onClick={()=>{countHandler(2,"notincreasement")}} className={count > 1 ? "clicked": null}></div>
-            <div onClick={()=>{countHandler(3,"notincreasement")}} className={count > 2 ? "clicked": null}></div>
+            <div  className={count >= 1 ? "clicked": null}></div>
+            <div  className={count > 1 ? "clicked": null}></div>
+            <div  className={count > 2 ? "clicked": null}></div>
           </div>
           {
             count == 1
             ? <LetTalk1 />
             : count == 2
-            ? <LetTalk2 />
+            ? <LetTalk2 func={setIsServicesClicked} />
             : count == 3
             ? <LetTalk3 />
-            : null 
+            : (
+              <>
+                <div className='typewriter4'>
+                  <p>Thank you!</p>
+                  <p>Biyi would reach out shortly</p>
+                </div>
+              </>
+              ) 
           }
             { count <= 3
             ?
@@ -84,6 +96,7 @@ export default function Letstalkpage() {
             </svg>
           </a>
         </div>
+        <Services servicesState={isServicesClicked} func={setIsServicesClicked} />
       <Comp3 />
     </div>
   )

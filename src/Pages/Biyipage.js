@@ -14,10 +14,10 @@ import "../Styles/biyipage.css"
 export default function Biyi() {
   return (
     <div className='biyipage'>
-      <Navbar />
+      <Navbar page={"biyi"} />
       <div className='meet-biyi'>
         <div className='meet-biyi-01'>
-          <img src={biyi} alt='a picture of biyi aroloye' />
+          <img src={biyi} loading='lazy' alt='a picture of biyi aroloye' />
           <p>Meet Biyi</p>
         </div>
         <div className='meet-biyi-02'>
@@ -49,20 +49,38 @@ export default function Biyi() {
       </div>
       <div className='services-container'>
         <div className='design'>
-          <img src={design} alt="design pictoral representation" />
+          <img src={design} loading='lazy' alt="design pictoral representation" />
           <p>Design</p>
+          <div className='hover-div'>
+            <p>Visualize your Ideas</p>
+            <div className='div-circle'>
+              Let's Talk
+            </div>
+          </div>
         </div>
         <div className='strategy'>
-          <img src={strategy} alt='strategy pictoral representation' />
+          <img src={strategy} loading='lazy' alt='strategy pictoral representation' />
           <p>Strategy</p>
+          <div className='hover-div'>
+            <p>Execute your goals</p>
+            <div className='div-circle'>
+              Let's Talk
+            </div>
+          </div>
         </div>
         <div className='consulting'>
-          <img src={consulting} alt='consulting pictoral representation' />
+          <img src={consulting} loading='lazy' alt='consulting pictoral representation' />
           <p>consulting</p>
+          <div className='hover-div'>
+            <p>Enlighten your mind</p>
+            <div className='div-circle'>
+              Let's Talk
+            </div>
+          </div>
         </div>
       </div>
       <div className='skills-gif'>
-        <img src={skills_gif} alt='skills gif' />
+        <img src={skills_gif} loading='lazy' alt='skills gif' />
       </div>
       <Comp2 />
       <Comp />

@@ -7,7 +7,7 @@ import pawn from "../assets/Homepage/Pawn.png"
 import { NavLink, useNavigate } from 'react-router-dom'
 import "../Styles/navbar.css"
 
-export default function Navbar() {
+export default function Navbar({page}) {
     const navigate = useNavigate()
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
     function navbarHandler(){
@@ -17,29 +17,23 @@ export default function Navbar() {
     <>
     <nav className='desktop-nav'>
         <div className='navbar-links'>
-        <div className='links'>
-            <img src={queen} alt='queen' />
+        <div className='links' onClick={()=> navigate('/biyi')}>
+            <img src={queen} alt='queen'  loading='lazy'/>
         </div>
         <div className='links'>
-            <NavLink to="/biyi">
-                <img src={king} alt='king' />
-            </NavLink>
+            <img src={king} alt='king' loading='lazy' />
+        </div>
+        <div className='links' onClick={()=> navigate('/')}>
+            <img src={logo} alt='logo' loading='lazy' />
         </div>
         <div className='links'>
-            <NavLink to="/">
-                <img src={logo} alt='logo' />
-            </NavLink>
+            <img src={knight} alt='knight' loading='lazy' />
         </div>
         <div className='links'>
-            <NavLink to="/letstalk">
-                <img src={knight} alt='knight' />
-            </NavLink>
-        </div>
-        <div className='links'>
-            <img src={pawn} alt='pawn' />
+            <img src={pawn} alt='pawn' loading='lazy' />
         </div>
         </div>
-        <div className='chat'>
+        <div className={page !== "letstalk" ? 'chat' : null} onClick={()=>navigate('/letstalk')}>
             Let's Talk
         </div>
     </nav>
@@ -51,7 +45,7 @@ export default function Navbar() {
                 <rect width="18" height="3" transform="matrix(-1 0 0 1 18 14)" fill="white"/>
             </svg>
             <div className='mobile-link'>
-                <img src={logo} onClick={()=> navigate("/")} alt='logo' />
+                <img src={logo} loading='lazy' onClick={()=> navigate("/")} alt='logo' />
             </div>
         </div>
         <div className={ !isMobileNavbarOpen ? 'mobile-container' : 'mobile-container open' }>

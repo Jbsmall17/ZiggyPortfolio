@@ -1,0 +1,106 @@
+div.services-container.moved{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 52.5rem;
+    width: 100%;
+    height: 25rem;
+    background: #FFF;
+    display: grid;
+    padding-inline: 4rem;
+    padding-block-start: 1.75rem;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+div.services-container{
+    /* transform: translateX(0%); */
+    transform: translateX(500%) translateY(-50%);
+    position: absolute;
+    max-width: 52.5rem;
+    width: 100%;
+    height: 25rem;
+    background: #FFF;
+    display: grid;
+    padding-inline: 4rem;
+    padding-block-start: 1.75rem;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    z-index: 10;
+}
+svg.cancel-svg{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    cursor: pointer;
+}
+div.services-container > div > div:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-block-end: 1.75rem;
+}
+div.services-container > div > div:nth-of-type(2) > input{
+    width: 1.1875rem;
+    height: 1.1875rem;
+    border: 1px solid #000;
+    margin-inline: .5rem;
+    margin-block-end: 1rem;
+}
+div.services-container > div > div:nth-of-type(2) > label{
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-block-end: 1rem;
+}
+div.consulting-container-body > div{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    /* gap: 0.5rem; */
+    /* justify-content: space-between; */
+    margin-block-end: 0.5rem;
+}
+div.consulting-container-body > div > input{
+    width: 1.1875rem;
+    height: 1.1875rem;
+    border: 1px solid #000;
+    margin-inline-end: 0.5rem;  
+}
+div.consulting-container-body > div > label{
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    width: calc(100% - 1.6875rem);
+}
+@media screen and (max-width: 768px) {
+    div.services-container.moved{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translateX(0%) translateY(0%);
+        max-width: 52.5rem;
+        width: 100%;
+        height: auto;
+        background: #FFF;
+        display: grid;
+        padding-inline: 4rem;
+        padding-block-start: 1.75rem;
+        grid-template-columns:  1fr;
+    }
+    div.services-container{
+        /* transform: translateX(0%); */
+        transform: translateX(500%) translateY(-50%);
+        position: absolute;
+        max-width: 52.5rem;
+        width: 100%;
+        height: auto;
+        background: #FFF;
+        display: grid;
+        padding-inline: 4rem;
+        padding-block-start: 1.75rem;
+        grid-template-columns:  1fr;
+    }
+}

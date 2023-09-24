@@ -6,6 +6,7 @@ div.homepage > p.name {
     font-size: 4.75rem;
     margin-block-end: 2rem;
     color: #FFF;
+    padding-block-start: 7.375rem;
     text-align: center;
   }
   div.gif-container{
@@ -148,6 +149,7 @@ div.view-portfolio{
         font-size: var(--font-70);
         font-weight: 400;
         text-align: center;
+        padding-block-start: 11.5rem;
         margin-block-end: .5rem;
     }
     
@@ -285,6 +287,7 @@ div.homepage > p.name{
     font-size: var(--font-70);
     font-weight: 400;
     text-align: center;
+    padding-block-start: 13rem;
     margin-block-end: .5rem;
 }
 
