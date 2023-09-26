@@ -10,6 +10,9 @@ nav.mobile-nav{
     margin-block-end: 3.25rem;
     z-index: 9
 }
+nav.mobile-nav.disappear{
+    display: none;
+}
 div.mobile-nav-links{
     position: relative;
 }
@@ -105,6 +108,9 @@ div.mobile-container > div.cancel{
         justify-content: center;
         width: 100%;
         z-index: 9;
+    }
+    nav.desktop-nav.disappear{
+        display: none;
     }
     nav.mobile-nav{
         display: none;

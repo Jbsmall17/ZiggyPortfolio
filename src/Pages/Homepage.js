@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useRef} from 'react'
 import '../Styles/homepage.css'
 import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
@@ -8,19 +8,104 @@ import mission_gif from "../assets/Homepage/mission.gif"
 import Comp2 from '../components/Comp2'
 
 
+
 export default function Homepage() {
+  const gifRef = useRef(null);
+  const divRef = useRef(null);
+  const divRef2 = useRef(null);
+  const expRef = useRef(null);
+  const missionRef = useRef(null);
+  useEffect(()=>{
+    const imgNodelist = document.querySelectorAll(".img") 
+    const observer = new IntersectionObserver(
+      (entries)=>{
+        entries.forEach((entry)=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add("appear")
+          }
+          else{
+            entry.target.classList.remove("appear")
+          }
+        })
+      }
+    )
+    imgNodelist.forEach((img)=>{
+      observer.observe(img)
+    })
+    return ()=>{
+      if(observer){
+        observer.disconnect()
+      }
+    }
+  },[])
+  function mouseMoveHandler(event){
+    const cursorX = event.clientX;
+    const cursorY = event.clientY;
+    const gifContainerTop = gifRef.current.getBoundingClientRect().top
+    const gifContainerLeft = gifRef.current.getBoundingClientRect().left
+    const newCursorX = cursorX - gifContainerLeft;
+    const newCursorY = cursorY - gifContainerTop
+    divRef.current.style.top = `${newCursorY}px`;
+    divRef.current.style.left = `${newCursorX}px`;
+    // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
+
+  }
+  function mouseMoveHandler2(event){
+    const cursorX = event.clientX;
+    const cursorY = event.clientY;
+    const expContainerTop = expRef.current.getBoundingClientRect().top
+    const expContainerLeft = expRef.current.getBoundingClientRect().left
+    const newCursorX = cursorX - expContainerLeft;
+    const newCursorY = cursorY - expContainerTop
+    divRef2.current.style.top = `${newCursorY}px`;
+    divRef2.current.style.left = `${newCursorX}px`;
+    // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
+
+  }
+  useEffect(()=>{
+    expRef.current.addEventListener("mousemove", mouseMoveHandler2)
+    return () =>{
+      expRef.current.removeEventListener("mousemove", mouseMoveHandler2)
+    }
+  },[])
+  useEffect(()=>{
+    gifRef.current.addEventListener("mousemove", mouseMoveHandler)
+    return () =>{
+      gifRef.current.removeEventListener("mousemove", mouseMoveHandler)
+    }
+  },[])
+  useEffect(()=>{
+    const observer = new IntersectionObserver(
+      ([entry])=>{
+        if(entry.isIntersecting){
+          console.log("seen")
+        }
+        else{
+          console.log("unseeen")
+        }
+    })
+    observer.observe(missionRef.current);
+    return ()=>{
+      if(observer){
+        observer.disconnect()
+      }
+    } 
+  },[])
   return (
     <div className='homepage'>
       <Navbar page={"home"} />
       <p className='name'>
         ‘Biyi Aroloye       
       </p>
-      <div className='gif-container'>
+      <div className='gif-container' ref={gifRef}>
         <img className='img backdrop1' loading='lazy' src={back_drop} alt="back drop background " />
         <img className='gif' src={gif} loading='lazy' alt="biyi's gif" />
         <img className='img backdrop2' loading='lazy' src={back_drop} alt="back drop background " />
+        <div className='meet-biyi' ref={divRef}>
+          Meet ‘Biyi
+        </div>
       </div>
-      <div className="mission">
+      <div className="mission" ref={missionRef}>
         <div className='div01'>
           <img src={mission_gif} loading='lazy' alt="mission gif" />
         </div>
@@ -45,7 +130,8 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-      <div className="experience">
+      <div className='homepg-container'>
+      <div ref={expRef} className="experience">
         <div className="exp-container">
         <div>
           <p>1000+</p>
@@ -62,12 +148,13 @@ export default function Homepage() {
           <p>Brands Served</p>
         </div>
         </div>
-        <div className="view-portfolio">
+        <div ref={divRef2} className="view-portfolio">
           View Portfolio
         </div>
       </div>
       <Comp2 />
       <Comp />
+      </div>
     </div>
   )
 }

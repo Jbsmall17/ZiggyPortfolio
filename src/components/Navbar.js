@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import king from "../assets/Homepage/King.png"
 import queen from "../assets/Homepage/Queen.png"
 import logo from "../assets/Homepage/logo.png"
@@ -8,14 +8,31 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import "../Styles/navbar.css"
 
 export default function Navbar({page}) {
-    const navigate = useNavigate()
+    const [isWindowScrolled,setIsWindowScrolled] = useState(false);
+    const navRef = useRef(null);
+    const mobileNavRef = useRef(null);
+    const navigate = useNavigate();
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
     function navbarHandler(){
         setIsMobileNavbarOpen(prev => !prev)
     }
+    function scrollHandler(){
+        if(window.scrollY > 672){
+            setIsWindowScrolled(true)
+        }
+        else{
+            setIsWindowScrolled(false)
+        }
+    }
+    useEffect(()=>{
+        window.addEventListener("scroll",scrollHandler)
+        return ()=>{
+            window.removeEventListener("scroll", scrollHandler)
+        }
+    },[])
   return (
     <>
-    <nav className='desktop-nav'>
+    <nav className={isWindowScrolled ?'desktop-nav disappear': 'desktop-nav'} ref={navRef}>
         <div className='navbar-links'>
         <div className='links' onClick={()=> navigate('/biyi')}>
             <img src={queen} alt='queen'  loading='lazy'/>
@@ -37,7 +54,7 @@ export default function Navbar({page}) {
             Let's Talk
         </div>
     </nav>
-    <nav className='mobile-nav'>
+    <nav className={isWindowScrolled ? 'mobile-nav disappear': 'mobile-nav'} ref={mobileNavRef}>
         <div className='mobile-nav-links' >
             <svg onClick={navbarHandler} style={{cursor: "pointer"}} xmlns="http://www.w3.org/2000/svg" width="32" height="17" viewBox="0 0 32 17" fill="none">
                 <rect width="32" height="3" transform="matrix(-1 0 0 1 32 0)" fill="white"/>
