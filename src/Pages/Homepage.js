@@ -4,108 +4,122 @@ import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
 import gif from "../assets/Homepage/Biyi_gif.gif"
 import back_drop from "../assets/Homepage/Back_drop.png"
-import mission_gif from "../assets/Homepage/mission.gif"
+import Biyi_Aroloye from "../assets/Homepage/Biyi_Aroloye.gif"
+import mission from "../assets/Homepage/Hand_of_Mission.png"
+import localization from "../assets/Homepage/Localization_Lab_1.png"
+import policyLab from "../assets/Homepage/policyLab_2.png"
+import AfricaPrudential from "../assets/Homepage/Africa_Prudential_3.png"
+import kujaLink from "../assets/Homepage/Kujalink_4.png"
+import NIIT from "../assets/Homepage/NIIT_5.png"
+import DigitalFortess from "../assets/Homepage/Digital_fortress_6.png"
+import lagosState from "../assets/Homepage/Lagos_state_7.png"
+import tetrat from "../assets/Homepage/tetrat_8.png"
+import layer from "../assets/Homepage/Layer_9.png"
 import Comp2 from '../components/Comp2'
 
 
 
 export default function Homepage() {
-  const gifRef = useRef(null);
-  const divRef = useRef(null);
-  const divRef2 = useRef(null);
-  const expRef = useRef(null);
-  const missionRef = useRef(null);
-  useEffect(()=>{
-    const imgNodelist = document.querySelectorAll(".img") 
-    const observer = new IntersectionObserver(
-      (entries)=>{
-        entries.forEach((entry)=>{
-          if(entry.isIntersecting){
-            entry.target.classList.add("appear")
-          }
-          else{
-            entry.target.classList.remove("appear")
-          }
-        })
-      }
-    )
-    imgNodelist.forEach((img)=>{
-      observer.observe(img)
-    })
-    return ()=>{
-      if(observer){
-        observer.disconnect()
-      }
-    }
-  },[])
+  // const gifRef = useRef(null);
+  const brandDivRef = useRef(null);
+  // const divRef2 = useRef(null);
+  const brandRef = useRef(null);
+  // const missionRef = useRef(null);
+  // useEffect(()=>{
+  //   const imgNodelist = document.querySelectorAll(".img") 
+  //   const observer = new IntersectionObserver(
+  //     (entries)=>{
+  //       entries.forEach((entry)=>{
+  //         if(entry.isIntersecting){
+  //           entry.target.classList.add("appear")
+  //         }
+  //         else{
+  //           entry.target.classList.remove("appear")
+  //         }
+  //       })
+  //     }
+  //   )
+  //   imgNodelist.forEach((img)=>{
+  //     observer.observe(img)
+  //   })
+  //   return ()=>{
+  //     if(observer){
+  //       observer.disconnect()
+  //     }
+  //   }
+  // },[])
   function mouseMoveHandler(event){
     const cursorX = event.clientX;
     const cursorY = event.clientY;
-    const gifContainerTop = gifRef.current.getBoundingClientRect().top
-    const gifContainerLeft = gifRef.current.getBoundingClientRect().left
-    const newCursorX = cursorX - gifContainerLeft;
-    const newCursorY = cursorY - gifContainerTop
-    divRef.current.style.top = `${newCursorY}px`;
-    divRef.current.style.left = `${newCursorX}px`;
+    const brandContainerTop = brandRef.current.getBoundingClientRect().top
+    const brandContainerLeft = brandRef.current.getBoundingClientRect().left
+    const newCursorX = cursorX - brandContainerLeft;
+    const newCursorY = cursorY - brandContainerTop
+    brandDivRef.current.style.top = `${newCursorY}px`;
+    brandDivRef.current.style.left = `${newCursorX}px`;
     // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
-
-  }
-  function mouseMoveHandler2(event){
-    const cursorX = event.clientX;
-    const cursorY = event.clientY;
-    const expContainerTop = expRef.current.getBoundingClientRect().top
-    const expContainerLeft = expRef.current.getBoundingClientRect().left
-    const newCursorX = cursorX - expContainerLeft;
-    const newCursorY = cursorY - expContainerTop
-    divRef2.current.style.top = `${newCursorY}px`;
-    divRef2.current.style.left = `${newCursorX}px`;
-    // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
-
+}
+  function mouseLeaveHandler(event){
+    brandDivRef.current.style.top = `100%`;
+    brandDivRef.current.style.left = `50%`;
+    brandDivRef.current.style.transform = "translateY(-100%) translateX(-50%)"
   }
   useEffect(()=>{
-    expRef.current.addEventListener("mousemove", mouseMoveHandler2)
+      brandRef.current.addEventListener("mousemove", mouseMoveHandler)
+      brandRef.current.addEventListener("mouseleave", mouseLeaveHandler)
     return () =>{
-      expRef.current.removeEventListener("mousemove", mouseMoveHandler2)
+      brandRef.current.removeEventListener("mousemove", mouseMoveHandler)
+      brandRef.current.removeEventListener("mouseleave", mouseLeaveHandler)
     }
-  },[])
-  useEffect(()=>{
-    gifRef.current.addEventListener("mousemove", mouseMoveHandler)
-    return () =>{
-      gifRef.current.removeEventListener("mousemove", mouseMoveHandler)
-    }
-  },[])
-  useEffect(()=>{
-    const observer = new IntersectionObserver(
-      ([entry])=>{
-        if(entry.isIntersecting){
-          console.log("seen")
-        }
-        else{
-          console.log("unseeen")
-        }
-    })
-    observer.observe(missionRef.current);
-    return ()=>{
-      if(observer){
-        observer.disconnect()
-      }
-    } 
-  },[])
+},[])
+
+  // function mouseMoveHandler2(event){
+  //   const cursorX = event.clientX;
+  //   const cursorY = event.clientY;
+  //   const expContainerTop = expRef.current.getBoundingClientRect().top
+  //   const expContainerLeft = expRef.current.getBoundingClientRect().left
+  //   const newCursorX = cursorX - expContainerLeft;
+  //   const newCursorY = cursorY - expContainerTop
+  //   divRef2.current.style.top = `${newCursorY}px`;
+  //   divRef2.current.style.left = `${newCursorX}px`;
+  //   // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
+
+  // }
+  // useEffect(()=>{
+  //   gifRef.current.addEventListener("mousemove", mouseMoveHandler)
+  //   return () =>{
+  //     gifRef.current.removeEventListener("mousemove", mouseMoveHandler)
+  //   }
+  // },[])
+  
+  
   return (
     <div className='homepage'>
       <Navbar page={"home"} />
-      <p className='name'>
+      {/* <p className='name'>
         ‘Biyi Aroloye       
-      </p>
-      <div className='gif-container' ref={gifRef}>
+      </p> */}
+      {/* <div className='gif-container' ref={gifRef}>
         <img className='img backdrop1' loading='lazy' src={back_drop} alt="back drop background " />
         <img className='gif' src={gif} loading='lazy' alt="biyi's gif" />
         <img className='img backdrop2' loading='lazy' src={back_drop} alt="back drop background " />
         <div className='meet-biyi' ref={divRef}>
           Meet ‘Biyi
         </div>
+      </div> */}
+      <div className='homepg-biyi'>
+        <div className='homepg-biyi-image'>
+            <img src={Biyi_Aroloye} alt="Biyi's image"></img>
+        </div>
+        <div className='homepg-biyi-text'>
+          <p>'Biyi Aroloye</p>
+          <p>KING of DESIGN-STRATEGY</p>
+        </div>
+        <div className='homepg-biyi-cta'>
+          Meet 'Biyi
+        </div>
       </div>
-      <div className="mission" ref={missionRef}>
+      {/* <div className="mission" ref={missionRef}>
         <div className='div01'>
           <img src={mission_gif} loading='lazy' alt="mission gif" />
         </div>
@@ -129,9 +143,12 @@ export default function Homepage() {
             </svg>
           </div>
         </div>
+      </div> */}
+      <div className='homepg-mission'>
+          <p>Mission</p>
+          <img src={mission} alt='biyi pictoral representation of mission'></img>
       </div>
-      <div className='homepg-container'>
-      <div ref={expRef} className="experience">
+      {/* <div ref={expRef} className="experience">
         <div className="exp-container">
         <div>
           <p>1000+</p>
@@ -151,10 +168,26 @@ export default function Homepage() {
         <div ref={divRef2} className="view-portfolio">
           View Portfolio
         </div>
+      </div> */}
+      <div className='homepg-brand' ref={brandRef}>
+          <p><span>1000+</span> design projects | <span>30+</span> brands served</p>
+          <div className='homepg-brand-container-main'>
+          <div className='homepg-brand-container'>
+            <img src={localization} alt='localization'></img>
+            <img src={policyLab} alt="policy-lab" />
+            <img src={AfricaPrudential} alt='africa-prudential' />
+            <img src={kujaLink} alt='kajalink' />
+            <img src={NIIT} alt='NIIT' />
+            <img src={DigitalFortess} alt='Digital- fortress' />
+            <img src={lagosState} alt='lagos state' />
+            <img src={tetrat} alt='tetrat' />
+            <img src={layer} alt="layer" />
+          </div>
+          </div>
+          <div ref={brandDivRef} className='homepg-brand-portfolio'>View Portfolio</div>
       </div>
       <Comp2 />
       <Comp />
-      </div>
     </div>
   )
 }

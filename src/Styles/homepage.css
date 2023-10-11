@@ -1,15 +1,15 @@
 div.homepage{
     width: 100%;
 }
-div.homepage > p.name {
+/* div.homepage > p.name {
     font-family: better-yesterday;
     font-size: 4.75rem;
     margin-block-end: 2rem;
     color: #FFF;
     padding-block-start: 7.375rem;
     text-align: center;
-  }
-  div.gif-container{
+  } */
+  /* div.gif-container{
     width: 100%;
     position: relative;
     padding-block-end: 10rem;
@@ -54,19 +54,157 @@ div.gif-container > div.meet-biyi{
     border: 1px solid #fff;
     border-radius: 50%;
     z-index: 4;
+} */
+div.homepg-biyi{
+    width: 100%;
+    padding-block-start: 9.688rem;
+    padding-inline: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    gap:1.25rem;
 }
-div.mission{
+div.homepg-biyi-image{
+    width: 100%;
+    height: 32.5rem;
+}
+div.homepg-biyi-image > img{
+    width: 100%;
+    height: 100%;
+    display: block;
+} 
+div.homepg-biyi-text{
+    padding-block-start: 0rem;
+    text-align: center;
+}
+div.homepg-biyi-text > p:nth-of-type(1){
+    font-family: better-yesterday;
+    color: #e4bb89;
+    font-size: 3.0rem;
+    white-space: nowrap;
+}
+div.homepg-biyi-text > p:nth-of-type(2){
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+}  
+div.homepg-biyi-cta{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.0rem;
+    height: 7.0rem;
+    border-radius: 50%;
+    background-color: #FFF;
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+div.homepg-mission{
+    position: sticky;
+    top:0;
+    left:0;
+    background-color: #FFF;
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.homepg-mission > img{
+    transform: scale(0.6);
+}
+div.homepg-mission > p{
+    position: absolute;
+    left:6.563rem;
+    top: 0;
+    background: #000;
+    padding: 0.5rem;
+    border-radius: 0px 0px 0.25rem 0.25rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+div.homepg-brand{
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    Z-index: 3;
+    background-color: #000;
+    padding-block-start: 4.688rem;
+}
+div.homepg-brand > p{
+    text-align: center;
+    color: #FFF;
+    font-size: 1.0rem;
+    font-weight: 400;
+    line-height: normal;
+    margin-block-end: 2.5rem;
+}
+div.homepg-brand > p > span{
+    font-weight: 700;
+}
+div.homepg-brand-container-main{
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+div.homepg-brand-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3.125rem;
+    padding-block: 1.5rem;
+    padding-inline-start: 1.5rem;
+    animation: motion 15s linear 1s infinite alternate;
+}
+@keyframes motion {
+ from{
+    transform: translateX(0);
+ }
+ to{
+    transform: translateX(-155%);
+ } 
+}
+div.homepg-brand-container > img{
+    transform:  scale(0.5);
+}
+div.homepg-brand-portfolio{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 7.188rem;
+    height: 7.188rem;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* div.mission{
     background: var(--secondary-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* gap: 2.5rem; */
     padding-inline-start: 0;
     padding-inline-end: 0;
     padding-block-end: 3.75rem;
-    /* position: sticky; */
-    /* position:-webkit-sticky; */
     top:0;
     left:0;
     z-index: 0;
@@ -79,8 +217,8 @@ div.mission > div.div01{
 }
 div.mission > div > img{
     width: 100%
-}
-div.div02 > p.para01{
+} */
+/* div.div02 > p.para01{
     color: #000;
     font-size: var(--font-24);
     margin-block-end: 1.125rem;
@@ -106,14 +244,12 @@ div.vector-img{
     align-items: center;
 }
 svg.svg2{
-    /* position: relative; */
     transform: translateY(.6875rem);
 }
 svg.svg3{
     transform: translateY(-2rem) translateX(.5rem);
-}
-div.experience{
-    /* height: 28rem; */
+} */
+/* div.experience{
     background-image:url("../assets/Homepage/biyi_bg.png") ;
     background-repeat:no-repeat;
     background-position: center;
@@ -126,10 +262,8 @@ div.exp-container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* gap: 3.4375rem; */
     justify-content: space-between;
     color: var(--primary-color-2);
-    /* margin-bottom: 3.375rem; */
 }
 div.exp-container > div:not(:nth-of-type(2),:nth-of-type(4)){
     padding: .25rem;
@@ -162,16 +296,15 @@ div.view-portfolio{
     align-items: center;
     text-align: center;
     border: .125rem solid var(--primary-color-2);
-    /* margin: 0 auto; */
     position: absolute;
     top: 0%;
     left: 0%;
     transform: translateX(-50%) translateY(-50%);
-}
+} */
 
 
 @media screen and (min-width: 768px) {
-    div.homepage > p.name{
+    /* div.homepage > p.name{
         font-family: better-yesterday;
         color: #FFF;
         font-size: var(--font-70);
@@ -179,11 +312,10 @@ div.view-portfolio{
         text-align: center;
         padding-block-start: 11.5rem;
         margin-block-end: .5rem;
-    }
+    } */
     
-    div.gif-container{
+    /* div.gif-container{
         width: 100%;
-        /* margin: 0 auto; */
         padding-inline: 8.125rem;
         position: relative;
         padding-block-end: 6.25rem;
@@ -220,9 +352,130 @@ div.view-portfolio{
         display: block;
         width: 100%;
         height: 34.375rem;
-    }
-    
-    div.mission{
+    } */
+div.homepg-biyi{
+    width: 100%;
+    padding-block-start: 6.25rem;
+    padding-inline: 1.563rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap:2.0rem;
+        justify-content: center;
+}
+div.homepg-biyi-image{
+    width: 40.25rem;
+    height: 42.25rem;
+}
+div.homepg-biyi-image > img{
+    width: 100%;
+    height: 100%;
+    display: block;
+} 
+div.homepg-biyi-text{
+    padding-block-start: 10rem;
+    text-align: center;
+}
+div.homepg-biyi-text > p:nth-of-type(1){
+    font-family: better-yesterday;
+    color: #e4bb89;
+    font-size: 3.0rem;
+    white-space: nowrap;
+}
+div.homepg-biyi-text > p:nth-of-type(2){
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+div.homepg-mission{
+    position: sticky;
+    top:0;
+    left:0;
+    background-color: #FFF;
+    width: 100%;
+    height: 31.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.homepg-mission > img{
+    transform: scale(0.9);
+}
+div.homepg-mission > p{
+    position: absolute;
+    left: 6.563rem;
+    top: 0;
+    background: #000;
+    padding: 0.5rem;
+    border-radius: 0px 0px 0.25rem 0.25rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+div.homepg-brand{
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    Z-index: 3;
+    background-color: #000;
+    padding-block-start: 4.688rem;
+    overflow: hidden;
+}
+div.homepg-brand > p{
+    text-align: center;
+    color: #FFF;
+    font-size: 1.0rem;
+    font-weight: 400;
+    line-height: normal;
+    margin-block-end: 2.5rem;
+}
+div.homepg-brand > p > span{
+    font-weight: 700;
+}
+div.homepg-brand-container-main{
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+div.homepg-brand-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3.125rem;
+    padding-block: 1.5rem;
+    padding-inline-start: 1.5rem;
+    animation: motion 15s linear 1s infinite alternate;
+}
+@keyframes motion {
+ from{
+    transform: translateX(0);
+ }
+ to{
+    transform: translateX(-155%);
+ } 
+}
+div.homepg-brand-container > img{
+    transform:  scale(0.75);
+}
+div.homepg-brand-portfolio{
+    position: absolute;
+    /* left: 50%;
+    bottom: 0;
+    transform: translateX(-50%); */
+    width: 7.188rem;
+    height: 7.188rem;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+    /* div.mission{
         background: var(--secondary-color);
         display: flex;
         flex-direction: column;
@@ -238,8 +491,8 @@ div.view-portfolio{
     }
     div.mission > div > img{
         width: 100%
-    }
-    div.div02 > p.para01{
+    } */
+    /* div.div02 > p.para01{
         color: #000;
         font-size: 1.75rem;
         font-weight: 600;
@@ -264,13 +517,12 @@ div.view-portfolio{
         align-items: center;
     }
     svg.svg2{
-        /* position: relative; */
         transform: translateY(.6875rem);
     }
     svg.svg3{
         transform: translateY(-2rem) translateX(.5rem);
-    }
-    div.experience{
+    } */
+    /* div.experience{
         height: 28rem;
         background-image:url("../assets/Homepage/biyi_bg.png") ;
         background-repeat:no-repeat;
@@ -282,10 +534,8 @@ div.view-portfolio{
         display: flex;
         flex-direction: row;
         align-items: center;
-        /* gap: 3.4375rem; */
         justify-content: space-between;
         color: var(--primary-color-2);
-        /* margin-bottom: 3.75rem; */
     }
     div.exp-container > div:not(:nth-of-type(2),:nth-of-type(4)){
         padding: .625rem;
@@ -317,10 +567,10 @@ div.view-portfolio{
         text-align: center;
         border: .125rem solid var(--primary-color-2);
         margin: 0 auto;
-    } 
+    }  */
 }
 @media screen and (min-width: 1024px){
-div.homepage > p.name{
+/* div.homepage > p.name{
     font-family: better-yesterday;
     color: #FFF;
     font-size: var(--font-70);
@@ -328,11 +578,10 @@ div.homepage > p.name{
     text-align: center;
     padding-block-start: 13rem;
     margin-block-end: .5rem;
-}
+} */
 
-div.gif-container{
+/* div.gif-container{
     width: 100%;
-    /* margin: 0 auto; */
     padding-inline: 8.125rem;
     position: relative;
     padding-block-end: 6.25rem;
@@ -358,9 +607,125 @@ div.gif-container > img.gif{
     display: block;
     width: 100%;
     height: 41.1875rem;
+} */
+div.homepg-biyi{
+    width: 100%;
+    padding-block-start: 9.375rem;
+    padding-inline: 3.125rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap:3.75rem;
+    justify-content: center;
 }
-
-div.mission{
+div.homepg-biyi-image{
+    width: 42.25rem;
+    height: 44.25rem;
+}
+div.homepg-biyi-image > img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+div.homepg-biyi-text{
+    padding-block-start: 10rem;
+    text-align: center;
+}
+div.homepg-biyi-text > p:nth-of-type(1){
+    font-family: better-yesterday;
+    color: #e4bb89;
+    font-size: 4rem;
+}
+div.homepg-biyi-text > p:nth-of-type(2){
+    color: #FFF;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+div.homepg-mission{
+    position: sticky;
+    top:0;
+    left:0;
+    background-color: #FFF;
+    width: 100%;
+    height: 37.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.homepg-mission > p{
+    position: absolute;
+    left:6.563rem;
+    top: 0;
+    background: #000;
+    padding: 0.5rem;
+    border-radius: 0px 0px 0.25rem 0.25rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+div.homepg-brand{
+    width: 100%;
+    height: 32.813rem;
+    position: relative;
+    Z-index: 3;
+    background-color: #000;
+    padding-block-start: 8.125rem;
+}
+div.homepg-brand > p{
+    text-align: center;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: normal;
+    margin-block-end: 3rem;
+    overflow-y: hidden;
+}
+div.homepg-brand > p > span{
+    font-weight: 700;
+}
+div.homepg-brand-container-main{
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+div.homepg-brand-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3.125rem;
+    padding-block: 2.375rem;
+    padding-inline-start: 1.875rem;
+    animation: motion 15s linear 1s infinite alternate;
+}
+@keyframes motion {
+ from{
+    transform: translateX(0);
+ }
+ to{
+    transform: translateX(-155%);
+ } 
+}
+div.homepg-brand-container > img{
+    transform:  scale(1);
+}
+div.homepg-brand-portfolio{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 7.188rem;
+    height: 7.188rem;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+/* div.mission{
     background: var(--secondary-color);
     display: flex;
     flex-direction: row;
@@ -375,8 +740,8 @@ div.mission > div{
 }
 div.mission > div > img{
     width: 100%
-}
-div.div02 > p.para01{
+} */
+/* div.div02 > p.para01{
     color: #000;
 font-size: var(--font-32);
 font-weight: 600;
@@ -397,13 +762,12 @@ div.vector-img{
     align-items: center;
 }
 svg.svg2{
-    /* position: relative; */
     transform: translateY(.6875rem);
 }
 svg.svg3{
     transform: translateY(-2rem) translateX(.5rem);
-}
-div.experience{
+} */
+/* div.experience{
     height: 33rem;
     background-image:url("../assets/Homepage/biyi_bg.png") ;
     background-repeat:no-repeat;
@@ -416,10 +780,8 @@ div.exp-container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* gap: 3.4375rem; */
     justify-content: space-between;
     color: var(--primary-color-2);
-    /* margin-bottom: 5.625rem; */
 }
 div.exp-container > div:not(:nth-of-type(2),:nth-of-type(4)){
     padding: .625rem;
@@ -450,5 +812,5 @@ div.view-portfolio{
     align-items: center;
     border: .125rem solid var(--primary-color-2);
     margin: 0 auto;
-}
+} */
 }

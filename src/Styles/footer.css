@@ -58,6 +58,9 @@ div.mobile-footer-container > div > p > span{
     }
     div.footer{
         color: #9B9B9B;
+        background-color: #000;
+        position: relative;
+        z-index: 3;
     }
     div.footer-container{
         margin: 0 4rem;
