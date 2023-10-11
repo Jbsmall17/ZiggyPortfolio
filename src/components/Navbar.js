@@ -1,9 +1,9 @@
 import React,{useState,useEffect,useRef} from 'react'
-import king from "../assets/Homepage/King.png"
-import queen from "../assets/Homepage/Queen.png"
-import logo from "../assets/Homepage/logo.png"
-import knight from "../assets/Homepage/Knight.png"
-import pawn from "../assets/Homepage/Pawn.png"
+import king from "../assets/Homepage/King.svg"
+import queen from "../assets/Homepage/Queen.svg"
+import knight from "../assets/Homepage/Knight.svg"
+import pawn from "../assets/Homepage/Pawn.svg"
+import logo from "../assets/Homepage/Logo.svg"
 import { NavLink, useNavigate } from 'react-router-dom'
 import "../Styles/navbar.css"
 
@@ -17,7 +17,7 @@ export default function Navbar({page}) {
         setIsMobileNavbarOpen(prev => !prev)
     }
     function scrollHandler(){
-        if(window.scrollY > 672){
+        if(window.scrollY > 300){
             setIsWindowScrolled(true)
         }
         else{

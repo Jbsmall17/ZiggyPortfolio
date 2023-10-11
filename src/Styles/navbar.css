@@ -2,17 +2,20 @@ nav.desktop-nav{
     display: none;
 }
 nav.mobile-nav{
-    width: 100%;
+    width: 100vw;
     position: fixed;
     height: 6.875rem;
     padding-block-start: 3.375rem;
     padding-inline-start: 3.0rem;
     margin-block-end: 3.25rem;
-    z-index: 9
+    z-index: 9;
+    transform: translateY(0%);
+    transition: all ease 0.5s 0.5s;
 }
 nav.mobile-nav.disappear{
-    display: none;
+    transform: translateY(-100%);
 }
+
 div.mobile-nav-links{
     position: relative;
 }
@@ -108,9 +111,11 @@ div.mobile-container > div.cancel{
         justify-content: center;
         width: 100%;
         z-index: 9;
+        transform: translateY(0%);
+        transition: all ease 0.5s 0.5s;
     }
     nav.desktop-nav.disappear{
-        display: none;
+        transform: translateY(-100%);
     }
     nav.mobile-nav{
         display: none;
@@ -118,7 +123,9 @@ div.mobile-container > div.cancel{
     div.navbar-links{
         display: flex;
         /* gap: 2.5625rem; */
+        height: 5rem;
         justify-content: space-around;
+        align-items: center;
         margin-block-start: 1.875rem;
         margin-block-end: 5.625rem;
         max-width: 30rem;
@@ -128,8 +135,8 @@ div.mobile-container > div.cancel{
         backdrop-filter: blur(.25rem);
     }
     div.navbar-links > div.links{
-        height: 4.0rem;
-        width: 4.0rem;
+        height: 4.5rem;
+        width: 4.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -180,10 +187,13 @@ div.mobile-container > div.cancel{
         width: 3.75rem;
     }
     div.links  img{
+        cursor: pointer
+    }
+    /* div.links  img{
         height: 3.0rem;
         width: 2.5rem;
         cursor: pointer;
-    }
+    } */
     div.links:nth-of-type(3)  img{
         height: 100%;
         width: 100%
@@ -191,9 +201,9 @@ div.mobile-container > div.cancel{
     div.chat{
         position: absolute;
         top: 1.875rem;
-        right: 3.75rem;
-        height: 4.0rem;
-        width: 4.0rem;
+        right: 3.0rem;
+        height: 4.5rem;
+        width: 4.5rem;
         color: #fff;
         text-align: center;
         display: flex;
@@ -243,7 +253,9 @@ div.mobile-container > div.cancel{
     div.navbar-links{
         display: flex;
         /* gap: 2.5625rem; */
+        height: 5.5rem;
         justify-content: space-around;
+        align-items: center;
         margin-block-start: 1.875rem;
         margin-block-end: 5.625rem;
         max-width: 35.875rem;
@@ -304,11 +316,11 @@ div.mobile-container > div.cancel{
         height: 4.5rem;
         width: 4.5rem;
     }
-    div.links:not(:nth-of-type(3))  img{
+    /* div.links:not(:nth-of-type(3))  img{
         height: 3.125rem;
         width: 1.5rem;
         cursor: pointer;
-    }
+    } */
     div.links:nth-of-type(3) img{
         height: 100%;
         width: 100%
