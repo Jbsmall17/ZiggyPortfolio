@@ -3,7 +3,24 @@ div.footer-container{
 }
 div.mobile-footer-container{
     display: block;
+    transform: translateY(100%);
+    visibility: hidden;
 }
+div.mobile-footer-container.scrollTo{
+    animation: movingFooter2 1s ease 1 forwards;
+}
+@keyframes movingFooter2 {
+    from{
+        transform: translateY(100%);
+        visibility: hidden;
+    }
+    to{
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+
 div.footer-img{
     width: 100%;
     height: 2.0rem;
@@ -68,7 +85,23 @@ div.mobile-footer-container > div > p > span{
         justify-content: space-between;
         align-items: center;
         padding-block: .5rem;
+        transform: translateY(100%);
+        visibility: hidden;
     }
+    div.footer-container.scrollTo{
+        animation: movingFooter 1s ease 1 forwards;
+    }
+    @keyframes movingFooter {
+        from{
+            transform: translateY(100%);
+            visibility: hidden;
+        }
+        to{
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+
     div.footer-div-1{
         display: flex;
         flex-direction: row;

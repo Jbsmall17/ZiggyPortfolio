@@ -1,4 +1,5 @@
 div.design-it{
+    overflow: hidden;
     height: 29.25rem;
     background: url("../assets/Homepage/Back_drop.png");
     background-position: center;
@@ -58,7 +59,8 @@ div.lets-go-together{
     position: absolute;
     /* bottom:20%;
     right: 10%; */
-    /* transform: translateX(-50%) translateY(-50%); */
+    transform: translateX(-50%) translateY(-50%) scale(0);
+    transform: scale(0);
     color: #060606;
     text-align: center;
     font-size: var(--font-16);
@@ -70,11 +72,70 @@ div.lets-go-together{
     border-radius: 50%;
     width:5.0rem;
     height: 5.0rem;
+    cursor: pointer;
 } 
+div.lets-go-together.appear{
+    transform:  translateX(-50%) translateY(-50%) scale(0);
+    animation: appearance2 1s ease 1 forwards;
+}
+@keyframes appearance2 {
+    to{
+        transform:   translateX(-50%) translateY(-50%) scale(1);
+    }
+}
+
+div.lets-go-together.disappear{
+    transform:  translateX(-50%) translateY(-50%) scale(1);
+    animation: disappearance2 1s ease 1 forwards;
+}
+@keyframes disappearance2 {
+    to{
+        transform:  translateX(-50%) translateY(-50%) scale(0);
+    }
+}
 /* div.design:hover div.lets-go-together{
     color: var(--primary-color-2);
     background-color:#060606;
 } */
+div.container > div > div:nth-of-type(1){
+    transform: translateY(100%);
+    visibility: hidden;
+}
+
+div.container > div > div:nth-of-type(1).scrollTo{
+    animation: moveUp 0.5s ease  1 forwards;
+}
+
+@keyframes moveUp  {
+    from{
+        transform: translateY(100%);
+        visibility: hidden;
+    }
+    to{
+        transform: translateY(0%);
+        visibility: visible;
+    }
+}
+
+div.container > div > div:nth-of-type(2){
+    transform: translateY(100%);
+    visibility: hidden;
+}
+div.container > div > div:nth-of-type(2).scrollTo{
+    animation: moveUp23 0.5s ease  0.5s 1 forwards;
+}
+
+@keyframes moveUp23  {
+    from{
+        transform: translateY(100%);
+        visibility: hidden;
+    }
+    to{
+        transform: translateY(0%);
+        visibility: visible;
+    }
+}
+
 @media screen and (min-width: 768px){
     div.design-it{
         height: 29.25rem;

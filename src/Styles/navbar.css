@@ -6,7 +6,7 @@ nav.mobile-nav{
     position: fixed;
     height: 6.875rem;
     padding-block-start: 3.375rem;
-    padding-inline-start: 3.0rem;
+    padding-inline: 3.0rem;
     margin-block-end: 3.25rem;
     z-index: 9;
     transform: translateY(0%);
@@ -18,13 +18,16 @@ nav.mobile-nav.disappear{
 
 div.mobile-nav-links{
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 div.mobile-link{
     width: 3rem;
     height: 3rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-70%);
+    /* position: absolute;
+    left: 90%;
+    transform: translateX(-50%) translateY(-70%); */
 }
 div.mobile-link > img{
     height: 100%;
@@ -138,24 +141,72 @@ div.mobile-container > div.cancel{
         height: 4.5rem;
         width: 4.5rem;
         display: flex;
+        transform: translateY(-150%);
         justify-content: center;
         align-items: center;
         border-radius: 50%;
         border: 1px solid #fff;
         position: relative;
     }
+    div.navbar-links > div.links:nth-of-type(1){
+        animation: movingDOwn1 0.5s linear 1 forwards;
+    }
+    @keyframes movingDOwn1 {
+        to{
+            transform: translateY(0);
+        }
+        
+    }
+    div.navbar-links > div.links:nth-of-type(2){
+        animation: movingDOwn2 0.5s linear 0.25s 1 forwards;
+    }
+    @keyframes movingDOwn2 {
+        to{
+            transform: translateY(0);
+        }
+        
+    }
+    div.navbar-links > div.links:nth-of-type(3){
+        animation: movingDOwn3 0.5s linear 0.5s 1 forwards;
+    }
+    @keyframes movingDOwn3 {
+        to{
+            transform: translateY(0);
+        }
+        
+    }
+    div.navbar-links > div.links:nth-of-type(4){
+        animation: movingDOwn4 0.5s linear 0.75s 1 forwards;
+    }
+    @keyframes movingDOwn4 {
+        to{
+            transform: translateY(0);
+        }
+        
+    }
+    div.navbar-links > div.links:nth-of-type(5){
+        animation: movingDOwn5 0.5s linear 1s 1 forwards;
+    }
+    @keyframes movingDOwn5 {
+        to{
+            transform: translateY(0);
+        }
+        
+    }
+
     div.navbar-links > div.links:nth-of-type(3){
         border: none;
     }
     div.navbar-links > div.links:not(:nth-of-type(3))::after{
         content: '';
-        height: 0rem;
-        width: 0rem;
+        height: 3.75rem;
+        width: 3.75rem;
+        overflow: hidden;
         background-color: var(--primary-color-2);
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%) scale(0);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -183,8 +234,9 @@ div.mobile-container > div.cancel{
         text-align: center;
     }
     div.navbar-links > div.links:not(:nth-of-type(3)):hover::after{
-        height: 3.75rem;
-        width: 3.75rem;
+        /* height: 3.75rem;
+        width: 3.75rem; */
+        transform: translateX(-50%) translateY(-50%) scale(1);
     }
     div.links  img{
         cursor: pointer
@@ -268,24 +320,27 @@ div.mobile-container > div.cancel{
         height: 5rem;
         width: 5rem;
         display: flex;
+        transform: translateY(-150%);
         justify-content: center;
         align-items: center;
         border-radius: 50%;
         border: 1px solid #fff;
         position: relative;
     }
+   
+
     div.navbar-links > div.links:nth-of-type(3){
         border: none;
     }
     div.navbar-links > div.links:not(:nth-of-type(3))::after{
         content: '';
-        height: 0rem;
-        width: 0rem;
+        height: 4.5rem;
+        width: 4.5rem;
         background-color: var(--primary-color-2);
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%) scale(0);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -295,12 +350,12 @@ div.mobile-container > div.cancel{
     div.navbar-links > div.links:nth-of-type(1):hover::after{
         content: 'Meet Biyi';
         font-size: var(--font-18);
-        text-align: center;
+        /* text-align: center; */
     }
     div.navbar-links > div.links:nth-of-type(2):hover::after{
         content: 'Portfolio';
         font-size: var(--font-16);
-        text-align: center;
+        /* text-align: center; */
     }
     div.navbar-links > div.links:nth-of-type(4):hover::after{
         content: 'Products';
@@ -313,8 +368,9 @@ div.mobile-container > div.cancel{
         text-align: center;
     }
     div.navbar-links > div.links:not(:nth-of-type(3)):hover::after{
-        height: 4.5rem;
-        width: 4.5rem;
+        /* height: 4.5rem;
+        width: 4.5rem; */
+        transform: translateX(-50%) translateY(-50%)  scale(1);
     }
     /* div.links:not(:nth-of-type(3))  img{
         height: 3.125rem;

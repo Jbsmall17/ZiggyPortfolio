@@ -2,23 +2,26 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
 import Comp2 from '../components/Comp2'
-import biyi from '../assets/Biyipage/Biyi_aroloye .png'
-import design from '../assets/Biyipage/design.svg'
-import consulting from '../assets/Biyipage/consulting.svg'
-import strategy from '../assets/Biyipage/strategy.svg'
+import biyi from '../assets/Biyipage/biyi_aroloye.png'
+import biyiMobile from "../assets/Biyipage/araloye_mobile.png"
+import design from '../assets/Biyipage/design.png'
+import consulting from '../assets/Biyipage/consult.png'
+import strategy from '../assets/Biyipage/strategy.png'
 import skills_gif from '../assets/Biyipage/Tech-Stack-_-Biyi-Aroloye.gif'
+import { useNavigate } from 'react-router-dom'
 import "../Styles/biyipage.css"
 
 
 
 export default function Biyi() {
+  const navigate = useNavigate()
   return (
     <div className='biyipage'>
       <Navbar page={"biyi"} />
       <div className='meet-biyi'>
         <div className='meet-biyi-01'>
-          <img src={biyi} loading='lazy' alt='a picture of biyi aroloye' />
-          <p>Meet Biyi</p>
+          <img src={biyi} className='desktop-image' loading='lazy' alt='a picture of biyi aroloye' />
+          <img src={biyiMobile} className='mobile-image' loading='lazy' alt='a picture of biyi aroloye' />
         </div>
         <div className='meet-biyi-02'>
           <p>
@@ -46,11 +49,14 @@ export default function Biyi() {
             Like a key ingredient in a recipe, Biyi is a valuable asset in any organization. 
           </p>
         </div>
+        <div className='learnmore' onClick={()=>{navigate("/learnmore")}}>
+          learn more
+        </div>
       </div>
       <div className='services-container'>
         <div className='design'>
-          <img src={design} loading='lazy' alt="design pictoral representation" />
-          <p>Design</p>
+          <img src={design} alt="" />
+          <p className='text'>DESIGN</p>
           <div className='hover-div'>
             <p>Visualize your Ideas</p>
             <div className='div-circle'>
@@ -59,18 +65,18 @@ export default function Biyi() {
           </div>
         </div>
         <div className='strategy'>
-          <img src={strategy} loading='lazy' alt='strategy pictoral representation' />
-          <p>Strategy</p>
+          <img src={strategy} alt="" />
+          <p className='text'>STRATEGY</p>
           <div className='hover-div'>
-            <p>Execute your goals</p>
+            <p>Achieve your goals</p>
             <div className='div-circle'>
               Let's Talk
             </div>
           </div>
         </div>
         <div className='consulting'>
-          <img src={consulting} loading='lazy' alt='consulting pictoral representation' />
-          <p>consulting</p>
+          <img src={consulting} alt="" />
+          <p className='text'>CONSULT</p>
           <div className='hover-div'>
             <p>Enlighten your mind</p>
             <div className='div-circle'>
@@ -79,10 +85,10 @@ export default function Biyi() {
           </div>
         </div>
       </div>
-      <div className='skills-gif'>
+      {/* <div className='skills-gif'>
         <img src={skills_gif} loading='lazy' alt='skills gif' />
-      </div>
-      <Comp2 />
+      </div> */}
+      {/* <Comp2 /> */}
       <Comp />
     </div>
   )

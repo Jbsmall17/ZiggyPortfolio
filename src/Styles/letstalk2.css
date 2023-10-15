@@ -12,6 +12,8 @@ div.typewriter2{
 }
 div.typewriter2 > p{
     font-size: 1.5rem;
+    width: 280px;
+    margin: 0 auto;
     color: #FFD700;
     overflow: hidden;
     white-space: nowrap;
@@ -36,7 +38,7 @@ div.typewriter2 > p{
         width: 0; /* Start with no text */
     }
     to {
-        width: 100%; /* Reveal the entire text */
+        width: 280px; /* Reveal the entire text */
     }
 }
 div.lettalk2 > div.select-service{

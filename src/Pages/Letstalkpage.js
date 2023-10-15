@@ -12,9 +12,22 @@ import Services from '../components/Services';
 // onClick={()=>{countHandler(2,"notincreasement")}}
 // onClick={()=>{countHandler(3,"notincreasement")}}
 
+const emailRegexPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+
 export default function Letstalkpage() {
   const [count,setCount] = useState(1);
-  const [isServicesClicked, setIsServicesClicked] = useState(false); 
+  const [text, setText] = useState("")
+  const [isFormDataValid, setFormDataValid] = useState(true)
+
+  console.log(isFormDataValid)
+  // const [buttonDisable, setButtonDisable] = useState(false)
+  const [isServicesClicked, setIsServicesClicked] = useState(false);
+  const [formObj,  setFormObj] = useState({
+    email : "",
+    selectValue : ""
+  }) 
+
+  const {email, selectValue} = formObj
   const navigate = useNavigate()
   function countHandler(number,type){
       if(type == "increment"){
@@ -23,6 +36,24 @@ export default function Letstalkpage() {
       }
       setCount(number)
   }
+
+    function handleClick(){
+        const isValid = emailRegexPattern.test(email)
+        if(!isValid || !selectValue && count < 3){
+          setFormDataValid(false)
+      
+        }
+        else if( !text && count ==3 ){
+          setFormDataValid(false)
+        }
+        else{
+
+          setFormDataValid(true)
+          countHandler(0,"increment")
+        }
+
+        // setFormObj({})
+    }
   return (
     <div className='lets-talk-page'>
       <Navbar page={"letstalk"} />
@@ -35,16 +66,15 @@ export default function Letstalkpage() {
           </div>
           {
             count == 1
-            ? <LetTalk1 />
+            ? <LetTalk1 validity={isFormDataValid} state={formObj} changeState={setFormObj} />
             : count == 2
             ? <LetTalk2 func={setIsServicesClicked} />
             : count == 3
-            ? <LetTalk3 />
+            ? <LetTalk3  validity={isFormDataValid} text={text} setText={setText} />
             : (
               <>
                 <div className='typewriter4'>
-                  <p>Thank you!</p>
-                  <p>Biyi would reach out shortly</p>
+                  <p>Gracias! Biyi will reach out to you shortly </p>
                 </div>
               </>
               ) 
@@ -52,7 +82,10 @@ export default function Letstalkpage() {
             { count <= 3
             ?
               (
-              <button onClick={()=>countHandler(0,"increment")} className='button'>
+              <button 
+                // disabled={buttonDisable} 
+                onClick={handleClick} 
+                className={ !isFormDataValid ? "error button" :'button' }>
                 proceed
               </button>
               )

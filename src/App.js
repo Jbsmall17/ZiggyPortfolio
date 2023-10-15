@@ -1,6 +1,8 @@
+import React from 'react'
 import {Routes, Route} from 'react-router-dom'
 import './App.css';
 import { Suspense,lazy } from 'react';
+import Learnmore from './Pages/Learnmore';
 
 const Home = lazy(()=> import('./Pages/Homepage'))
 const Biyi = lazy(()=> import("./Pages/Biyipage"))
@@ -46,6 +48,19 @@ function App() {
                 </div>
               }>
               <Letstalk  />
+            </Suspense>
+            }>
+        </Route>
+        <Route 
+          path='/learnmore'
+          element={
+            <Suspense 
+              fallback={
+                <div className='loader-container'>
+                  <p>loading....</p>
+                </div>
+              }>
+              <Learnmore  />
             </Suspense>
             }>
         </Route>

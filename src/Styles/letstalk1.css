@@ -11,20 +11,42 @@ div.lettalk1 >input{
     color: #9B9B9B;
     /* margin-top: 6.25rem; */
     margin-bottom: 1.3125rem;
+    transform: translateY(150%);
+    visibility: hidden;
+    animation: letstalkinput 1s ease 1s 1 forwards;
+}
+
+@keyframes  letstalkinput {
+    from{
+        transform: translateY(150%);
+        visibility: hidden;
+    }
+    to{
+        transform: translateY(0%);
+        visibility: visible;
+    }
+}
+div.lettalk1 >input.error{
+    border: 1px solid #E00F0F;
+}
+div.lettalk1 >input.error::placeholder{
+    color: #E00F0F;
 }
 div.typewriter{
     margin: 0 auto;
     margin-block: 0.5rem;
     /* text-align: center; */
-    padding: 3rem 1.5rem;
+    padding: 3rem 0rem;
     /* justify-content: center; */
     max-width: 463px;
-    width: 80%;
+    width: 95%;
     background: rgba(24, 24, 24, 0.25);
     border-radius: .3125rem;
 }
 div.typewriter > p{
     font-size: 1.5rem;
+    width: 405px;
+    margin: 0 auto;
     color: #FFD700;
     overflow: hidden;
     white-space: nowrap;
@@ -35,18 +57,27 @@ div.typewriter > p{
         width: 0; /* Start with no text */
     }
     to {
-        width: 100%; /* Reveal the entire text */
+        width: 405px; /* Reveal the entire text */
     }
 }
 @media screen and (max-width:425px) {
     div.typewriter{
-        margin: 0 auto;
         margin-block: 0.5rem;
         /* text-align: center; */
         padding: 3rem 0.75rem;
     }
     div.typewriter > p{
         font-size: 1.0rem;
+        width:275px;
+        margin: 0 auto;
+    }
+    @keyframes typewriter {
+        from {
+            width: 0; /* Start with no text */
+        }
+        to {
+            width: 275px; /* Reveal the entire text */
+        }
     }   
 }
 div.lettalk1 >input::placeholder{
@@ -71,10 +102,32 @@ div.lettalk1 >select{
     color: #9B9B9B;
     outline: none;
     margin-bottom:4.0625rem;
+    transform: translateY(150%);
+    visibility: hidden;
+    animation: letstalkselect 1s ease 1.5s 1 forwards;
+}
+
+@keyframes  letstalkselect {
+    from{
+        transform: translateY(150%);
+        visibility: hidden;
+    }
+    to{
+        transform: translateY(0%);
+        visibility: visible;
+    }
+}
+
+
+div.lettalk1 >select.error{
+    border: 1px solid #E00F0F;
 }
 div.lettalk1 >select > option{
     padding: .3125rem .625rem;
     color: #9B9B9B;
     font-size: .875rem;
     font-weight: 400;
+}
+div.lettalk1 >select.error > option:nth-of-type(1){
+    color: #E00F0F;
 }

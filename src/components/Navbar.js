@@ -32,7 +32,7 @@ export default function Navbar({page}) {
     },[])
   return (
     <>
-    <nav className={isWindowScrolled ?'desktop-nav disappear': 'desktop-nav'} ref={navRef}>
+    <nav className={isWindowScrolled ?'desktop-nav disappear': 'desktop-nav navbar'} ref={navRef}>
         <div className='navbar-links'>
         <div className='links' onClick={()=> navigate('/biyi')}>
             <img src={queen} alt='queen'  loading='lazy'/>
@@ -54,7 +54,7 @@ export default function Navbar({page}) {
             Let's Talk
         </div>
     </nav>
-    <nav className={isWindowScrolled ? 'mobile-nav disappear': 'mobile-nav'} ref={mobileNavRef}>
+    <nav className={isWindowScrolled ? 'mobile-nav disappear': 'mobile-nav navbar'} ref={mobileNavRef}>
         <div className='mobile-nav-links' >
             <svg onClick={navbarHandler} style={{cursor: "pointer"}} xmlns="http://www.w3.org/2000/svg" width="32" height="17" viewBox="0 0 32 17" fill="none">
                 <rect width="32" height="3" transform="matrix(-1 0 0 1 32 0)" fill="white"/>

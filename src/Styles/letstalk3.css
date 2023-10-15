@@ -2,7 +2,7 @@ div.typewriter3{
     margin: 0 auto;
     margin-block: 0.5rem;
     /* text-align: center; */
-    padding: 3rem 2rem;
+    padding: 3rem 0rem;
     max-width: 463px;
     width: 80%;
     background: rgba(24, 24, 24, 0.25);
@@ -10,11 +10,22 @@ div.typewriter3{
 }
 div.typewriter3 > p{
     font-size: 1.5rem;
+    width:335px;
+    margin: 0 auto;
     color: #FFD700;
     overflow: hidden;
     white-space: nowrap;
     animation: typewriter3 1s steps(30) 1;
 }
+@keyframes typewriter3 {
+    from {
+        width: 0; /* Start with no text */
+    }
+    to {
+        width: 335px; /* Reveal the entire text */
+    }
+}
+
 @media screen and (max-width: 425px) {
     div.typewriter3{
         margin: 0 auto;
@@ -24,17 +35,72 @@ div.typewriter3 > p{
     }
     div.typewriter3 > p{
         font-size: 1.0rem;
+        width:215px
+    }
+
+    @keyframes typewriter3 {
+        from {
+            width: 0; /* Start with no text */
+        }
+        to {
+            width: 215px; /* Reveal the entire text */
+        }
     }
 }
-@keyframes typewriter3 {
-    from {
-        width: 0; /* Start with no text */
-    }
-    to {
-        width: 100%; /* Reveal the entire text */
-    }
+
+div.lettalk3 > textarea{
+    display: block;
+    display: flex;
+    max-width: 623px;
+    width: 80%;
+    height: 200px; 
+    margin: 0 auto;
+    /* height: 224px; */
+    border-radius: 6px;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    position: relative;
+    padding: 16px 19px 16px 14px;
+    color: #9B9B9B;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    transform: translateY(100%);
+    visibility: hidden;
+    animation: textarea23 1s ease 1s 1 forwards;
 }
-div.lettalk3 >input{
+
+@keyframes textarea23 {
+ from{
+    transform: translateY(100%);
+    visibility: hidden;
+   } 
+   to{
+    transform: translateY(0%);
+    visibility: visible;
+   }
+}
+div.lettalk3 > textarea::placeholder{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+div.lettalk3 > textarea.mobile{
+    display: none;
+}
+
+div.lettalk3 > textarea.error{
+    border: 1px solid #E00F0F;
+}
+
+@media screen and (max-width: 425px) {
+    div.lettalk3 > textarea{
+        height: 150px;
+    }
+
+}
+
+/* div.lettalk3 >input{
     display:  block;
     margin: 0 auto 3.875rem auto;
     max-width: 28.9375rem;
@@ -43,7 +109,21 @@ div.lettalk3 >input{
     border-radius: .375rem;
     border: 1px solid #FFF;
     background-color: transparent;
+    transform: translateY(100%);
+    visibility: hidden;
+    animation: letstalkinput3 1s ease 1s 1 forwards;
 }
+@keyframes letstalkinput3 {
+    from{
+        transform: translateY(100%);
+        visibility: hidden;
+    }
+    to{
+        transform: translateY(0%);
+        visibility: visible;
+    }
+}
+
 div.lettalk3 >input:focus{
     outline: none;
 }
@@ -51,4 +131,17 @@ div.lettalk3 >input::placeholder{
     color: #9B9B9B;
     font-size: .875rem;
     font-weight: 400;
+} */
+
+p.error, p.charactercount{
+    color: #E00F0F;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 48px;
+}
+
+p.charactercount{
+    color: #fff;
 }

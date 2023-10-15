@@ -1,13 +1,36 @@
 import React,{useState,useEffect,useRef} from 'react'
 import "../Styles/letstalk1.css"
 
-export default function LetTalk1() {
-    const selectRef = useRef(null);
-    const [change,setChange] = useState(false)
-    const [countries,setCountries] = useState([])
+
+
+export default function LetTalk1({ validity, state, changeState}) {
+  const [change,setChange] = useState(false)
+  const [countries,setCountries] = useState([])  
+  // const [formObj,  setFormObj] = useState({
+  //   email : "",
+  //   selectValue : ""
+  // })
+  const selectRef = useRef(null);
+
+  const {email, selectValue} = state
+  // console.log(email, selectValue)
+  
+  function handleChange(e){
+  const {name, value} = e.target
+  changeState({
+      ...state,
+      [name] : value
+    })
+
+    // const isValid = emailRegexPattern.test(email)
+    // if(!isValid && !selectValue){
+    //   setNotValid(true)
+    // }
+  }  
+    
     function allCountry(){
       if(countries){
-        console.log(selectRef.current)
+        // console.log(selectRef.current)
         countries.forEach(country => {
           const option = document.createElement('option');
           option.text = country;
@@ -44,10 +67,21 @@ export default function LetTalk1() {
         
       </div>
       <input 
-        type='text' 
+        type='text'
+        value={email}
+        className={!validity ? "error" : ""}
+        onChange={handleChange}
+        name="email" 
         placeholder='kindly enter email or company email'  
         />
-        <select ref={selectRef} id="countrySelect">
+        <select 
+          ref={selectRef} 
+          onChange={handleChange}
+          className={!validity ? "error" : ""}
+          id="countrySelect"
+          value={selectValue}
+          name='selectValue'
+        >
             <option value="">select Country</option>
         </select>
     </div>
