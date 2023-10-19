@@ -31,23 +31,34 @@ div.footer-img{
 div.mobile-footer-container > ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-inline: 2.7188rem;
+    justify-content: space-around;
+    /* padding-inline: 2.7188rem; */
     padding-block: .625rem;
-    background-color: var(--primary-color-2);
+    /* background-color: var(--primary-color-2); */
     list-style: none;
-    margin-block-end: 2.6875rem;
+    margin-block-end: 5.875rem;
 }
 div.mobile-footer-container > ul > li{
     color:var(--primary-color-1);
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 500;
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    color: #FFF;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
 }
 div.mobile-footer-container > div{
     position: relative;
     color: #9B9B9B;
     padding-block: 0.5rem;
     padding-inline-end: 1.5rem;
+    margin-block-end: 0.75rem;
 }
 div.mobile-footer-container > div > p{
     position: absolute;
@@ -147,14 +158,14 @@ div.mobile-footer-container > div > p > span{
         background-color: var(--primary-color-2);
         transition: all ease 0.5s;
     }
-    div.footer-div-2 > ul > li:hover{
+    /* div.footer-div-2 > ul > li:hover{
         animation: moveUp 0.1s ease  1;
     }
     @keyframes moveUp {
         to{
             transform: translateY(-2%);
         }
-    }
+    } */
     div.footer-div-2 > ul > li:hover::after{
         width: calc(100% - 1rem);
     }
@@ -235,14 +246,14 @@ div.mobile-footer-container > div > p > span{
         background-color: var(--primary-color-2);
         transition: all ease 0.5s;
     }
-    div.footer-div-2 > ul > li:hover{
+    /* div.footer-div-2 > ul > li:hover{
         animation: moveUp 0.1s ease  1;
     }
     @keyframes moveUp {
         to{
             transform: translateY(-2%);
         }
-    }
+    } */
     div.footer-div-2 > ul > li:hover::after{
         width: calc(100% - 1rem);
     }

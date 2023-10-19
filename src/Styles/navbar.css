@@ -268,15 +268,16 @@ div.mobile-container > div.cancel{
         cursor: pointer;
     }
     div.chat::after{
-        content: '';
-        height: 0rem;
-        width: 0rem;
+        content: "Let's Talk";
+        height: 3.5rem;
+        width: 3.5rem;
         background: var(--primary-color-2);
         color: var(--primary-color-1);
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        overflow: hidden;
+        transform: translateX(-50%) translateY(-50%) scale(0);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -285,11 +286,9 @@ div.mobile-container > div.cancel{
         transition: all ease 0.5s;
     }
     div.chat:hover::after{
-        content: "Let's Talk";
         /* font-size: var(--font-20); */
         text-align: center;
-        height: 3.5rem;
-        width: 3.5rem;
+        transform: translateX(-50%) translateY(-50%) scale(1);
     }
 }
 

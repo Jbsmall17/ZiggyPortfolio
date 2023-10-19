@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
 import Biyi_Aroloye from "../assets/Homepage/Biyi_Aroloye.gif"
 import mission from "../assets/Homepage/Hand_of_Mission.png"
+import mobileMission from "../assets/Homepage/mobile_asset.png"
 import localization from "../assets/Homepage/Localization_Lab_1.png"
 import policyLab from "../assets/Homepage/policyLab_2.png"
 import AfricaPrudential from "../assets/Homepage/Africa_Prudential_3.png"
@@ -14,7 +15,19 @@ import lagosState from "../assets/Homepage/Lagos_state_7.png"
 import Namelogo from "../assets/Homepage/Namelogo.svg"
 import tetrat from "../assets/Homepage/tetrat_8.png"
 import layer from "../assets/Homepage/Layer_9.png"
+import mobileBrand1 from "../assets/Homepage/mobile_brand_1.png"
+import mobileBrand2 from "../assets/Homepage/mobile_brand_2.png"
+import mobileBrand3 from "../assets/Homepage/mobile_brand_3.png"
+import mobileBrand4 from "../assets/Homepage/mobile_brand_4.png"
+import mobileBrand5 from "../assets/Homepage/mobile_brand_5.png"
+import mobileBrand6 from "../assets/Homepage/mobile_brand_6.png"
+import mobileBrand7 from "../assets/Homepage/mobile_brand_7.png"
+
+
+
+
 import Comp2 from '../components/Comp2'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -27,6 +40,7 @@ export default function Homepage() {
   const brandProjectRef = useRef()
   const meetBiyiRef = useRef()
   const meetBiyiCta = useRef()
+  const navigate = useNavigate()
   
   function mouseMoveHandler(event){
     const cursorX = event.clientX;
@@ -66,8 +80,9 @@ function mouseMoveHandler2(event){
   // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
 }
 function mouseLeaveHandler2(event){
-  meetBiyiCta.current.classList.remove("appear")
-  meetBiyiCta.current.classList.add("disappear")
+  const meetBiyiCta2 = meetBiyiCta.current
+  meetBiyiCta2.classList.remove("appear")
+  meetBiyiCta2.classList.add("disappear")
 }
 
 useEffect(()=>{
@@ -167,13 +182,17 @@ return () =>{
           <img src={Namelogo} alt='name logo' />
           <p>KING of DESIGN-STRATEGY</p>
         </div>
-        <div ref={meetBiyiCta} className='homepg-biyi-cta'>
+        <div ref={meetBiyiCta} onClick={()=>navigate("/biyi")} className='homepg-biyi-cta'>
             Meet 'Biyi
         </div>
       </div>
       <div className='homepg-mission'>
+          <div className="homepg-mission-para">
+          <p>My</p>
           <p>Mission</p>
-          <img src={mission} alt='biyi pictoral representation of mission'></img>
+          </div>
+          <img className='mission-img' src={mission} alt='biyi pictoral representation of mission'></img>
+          <img className='mobile-mission-img' src={mobileMission}  alt='biyi pictoral representation of mission' />
       </div>
       <div className='homepg-brand' ref={brandRef}>
           <div className='homepg-brand-flex'>
@@ -197,6 +216,15 @@ return () =>{
             <img src={lagosState} alt='lagos state' />
             <img src={tetrat} alt='tetrat' />
             <img src={layer} alt="layer" />
+          </div>
+          <div className='homepg-brand-container-mobile'>
+            <img src={mobileBrand1} alt='biyi brand partnership' />
+            <img src={mobileBrand2} alt='biyi brand partnership' />
+            <img src={mobileBrand3} alt='biyi brand partnership' />
+            <img src={mobileBrand4} alt='biyi brand partnership' />
+            <img src={mobileBrand5} alt='biyi brand partnership' />
+            <img src={mobileBrand6} alt='biyi brand partnership' />
+            <img src={mobileBrand7} alt='biyi brand partnership' />
           </div>
           </div>
           <div ref={brandDivRef} className='homepg-brand-portfolio'>View Portfolio</div>

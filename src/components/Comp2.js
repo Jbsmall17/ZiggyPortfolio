@@ -1,7 +1,9 @@
 import React,{useRef,useEffect} from 'react'
 import "../Styles/comp2.css"
+import { useNavigate } from 'react-router-dom';
 
 export default function Comp2() {
+  const navigate = useNavigate()
   const designRef = useRef();
   const divRef3 = useRef();
   const dreamItRef = useRef();
@@ -21,9 +23,9 @@ export default function Comp2() {
     // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
 }
 function mouseLeaveHandler2(event){
-
-  divRef3.current.classList.remove("appear")
-  divRef3.current.classList.add("disappear")
+  const divRef4 =  divRef3.current
+  divRef4.classList.remove("appear")
+  divRef4.classList.add("disappear")
   // divRef3.current.style.top = "80%";
   // divRef3.current.style.left = "80%";
   // divRef3.current.style.transform = "translateY(-50%) translateX(-50%)"
@@ -107,7 +109,7 @@ useEffect(()=>{
       </div>
       </div>
     </div>
-    <div ref={divRef3} className="lets-go-together">
+    <div ref={divRef3} onClick={()=>{navigate("/letstalk")}} className="lets-go-together">
       let's go together
     </div>
   </div>
