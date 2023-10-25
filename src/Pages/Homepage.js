@@ -144,12 +144,15 @@ return () =>{
     const observe = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach(entry => {
+          let intervalId;
           if (entry.isIntersecting) {
             brandProjectRefNode.classList.add("scrollTo")
-            const intervalId = setInterval(changeBrandNumber, 5000);
+            intervalId = setInterval(changeBrandNumber, 2000);
           }
           else{
             brandProjectRefNode.classList.remove("scrollTo")
+            // clearInterval(intervalId)
+            // setBrandNumber(0)
           }
         },{
           threshold: 1
@@ -173,12 +176,14 @@ return () =>{
     const observe = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach(entry => {
+          let intervalId;
           if (entry.isIntersecting) {
             designProjectRefNode.classList.add("scrollTo")
-            const intervalId = setInterval(changeDesignNumber, 0.5);
+             intervalId = setInterval(changeDesignNumber, 0.5);
           }
           else{
             designProjectRefNode.classList.remove("scrollTo")
+            // clearInterval(intervalId)
             // setDesignNumber(0)
           }
         },{
