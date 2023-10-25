@@ -11,7 +11,7 @@ div.learnmore-container > p{
     color: #E4BB89;
     font-family: Poppins;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 70px;
 }
 div.learnmore-container > p.care{
@@ -58,6 +58,9 @@ div.learnmore-container > input{
     animation: inputmoving 1s ease 1s 1 forwards;
 }
 
+div.learnmore-container > input.error{
+    border: 1px solid #E00F0F;
+}
 @keyframes inputmoving {
     from{
         transform: translateY(200%);
@@ -74,7 +77,9 @@ div.learnmore-container > input::placeholder{
     font-size: 14px;
     font-weight: 400;
 }
-
+div.learnmore-container > input.error::placeholder{
+    color: #E00F0F;
+}
 div.learnmore-div, div.learnmore-div2{
     position: relative;
     cursor: pointer;
@@ -86,6 +91,7 @@ div.learnmore-div, div.learnmore-div2{
     border-radius: 50%;
     border: 2px solid #fff;
     color: #fff;
+    font-weight: 600;
     font-size: 20px;
     text-align: center;
     margin: 0 auto 120px auto;
@@ -107,6 +113,10 @@ div.learnmore-div{
     }
 }
 
+div.learnmore-div.error{
+    border: 2px solid #E00F0F;
+    color: #E00F0F;
+}
 div.learnmore-div2{
     transform: translateY(250%);
     visibility: hidden;
@@ -136,6 +146,10 @@ div.learnmore-div::after{
     justify-content: center;
     align-items: center;
     transition: all ease 0.5s;
+}
+div.learnmore-div.error::after{
+    background-color: #E00F0F;
+    color: #FFF;
 }
 div.learnmore-div2::after{
     content: "Home";

@@ -21,6 +21,9 @@ div.mobile-nav-links{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: rgba(24, 24, 24, 0.70);
+    align-items: center;
+    padding-block: 4px;
 }
 div.mobile-link{
     width: 3rem;
@@ -108,7 +111,6 @@ div.mobile-container > div.cancel{
 }
 @media screen and (min-width:768px) {
     nav.desktop-nav{
-        /* height: 5.5625rem; */
         position: fixed;
         display: flex;
         justify-content: center;
@@ -141,14 +143,16 @@ div.mobile-container > div.cancel{
         height: 4.5rem;
         width: 4.5rem;
         display: flex;
-        transform: translateY(-150%);
+        font-size: 14px;
+        font-weight: 600;
+        /* transform: translateY(-150%); */
         justify-content: center;
         align-items: center;
         border-radius: 50%;
         border: 1px solid #fff;
         position: relative;
     }
-    div.navbar-links > div.links:nth-of-type(1){
+    /* div.navbar-links > div.links:nth-of-type(1){
         animation: movingDOwn1 0.5s linear 1 forwards;
     }
     @keyframes movingDOwn1 {
@@ -192,7 +196,7 @@ div.mobile-container > div.cancel{
             transform: translateY(0);
         }
         
-    }
+    } */
 
     div.navbar-links > div.links:nth-of-type(3){
         border: none;
@@ -247,8 +251,8 @@ div.mobile-container > div.cancel{
         cursor: pointer;
     } */
     div.links:nth-of-type(3)  img{
-        height: 100%;
-        width: 100%
+        width: 100%;
+        transform: scale(0.75);
     }
     div.chat{
         position: absolute;
@@ -256,9 +260,12 @@ div.mobile-container > div.cancel{
         right: 3.0rem;
         height: 4.5rem;
         width: 4.5rem;
+        font-weight: 600;
+        font-size: 14px;
         color: #fff;
         text-align: center;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         font-size:var(--font-14);
@@ -267,6 +274,11 @@ div.mobile-container > div.cancel{
         border: 1px solid #fff;
         cursor: pointer;
     }
+    #content::after{
+        content: "\a";
+        white-space: pre;
+    }
+    
     div.chat::after{
         content: "Let's Talk";
         height: 3.5rem;
@@ -316,10 +328,10 @@ div.mobile-container > div.cancel{
         backdrop-filter: blur(.25rem);
     }
     div.navbar-links > div.links{
-        height: 5rem;
-        width: 5rem;
+        height: 5.25rem;
+        width: 5.25rem;
         display: flex;
-        transform: translateY(-150%);
+        /* transform: translateY(-150%); */
         justify-content: center;
         align-items: center;
         border-radius: 50%;
@@ -333,8 +345,8 @@ div.mobile-container > div.cancel{
     }
     div.navbar-links > div.links:not(:nth-of-type(3))::after{
         content: '';
-        height: 4.5rem;
-        width: 4.5rem;
+        height: 4.75rem;
+        width: 4.75rem;
         background-color: var(--primary-color-2);
         position: absolute;
         top: 50%;
@@ -377,15 +389,15 @@ div.mobile-container > div.cancel{
         cursor: pointer;
     } */
     div.links:nth-of-type(3) img{
-        height: 100%;
-        width: 100%
+        width: 100%;
+        transform: scale(0.75);
     }
     div.chat{
         position: absolute;
         top: 1.875rem;
         right: 3.75rem;
-        height: 5rem;
-        width: 5rem;
+        height: 5.25rem;
+        width: 5.25rem;
         color: #fff;
         /* text-align: center; */
         display: flex;
@@ -417,7 +429,7 @@ div.mobile-container > div.cancel{
         content: "Let's Talk";
         /* font-size: var(--font-20); */
         text-align: center;
-        height: 4.5rem;
-        width: 4.5rem;
+        height: 4.75rem;
+        width: 4.75rem;
     }
 }

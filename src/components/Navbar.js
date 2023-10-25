@@ -51,7 +51,7 @@ export default function Navbar({page}) {
         </div>
         </div>
         <div className={page !== "letstalk" ? 'chat' : null} onClick={()=>navigate('/letstalk')}>
-            Let's Talk
+            <span id='content'>Let's</span><span>Talk</span>
         </div>
     </nav>
     <nav className={isWindowScrolled ? 'mobile-nav disappear': 'mobile-nav navbar'} ref={mobileNavRef}>

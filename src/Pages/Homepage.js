@@ -1,28 +1,21 @@
-import React,{useEffect,useRef, useState} from 'react'
+import React,{useEffect,useRef,useState,useCallback} from 'react'
 import '../Styles/homepage.css'
 import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
 import Biyi_Aroloye from "../assets/Homepage/Biyi_Aroloye.gif"
 import mission from "../assets/Homepage/Hand_of_Mission.png"
 import mobileMission from "../assets/Homepage/mobile_asset.png"
-import localization from "../assets/Homepage/Localization_Lab_1.png"
-import policyLab from "../assets/Homepage/policyLab_2.png"
-import AfricaPrudential from "../assets/Homepage/Africa_Prudential_3.png"
-import kujaLink from "../assets/Homepage/Kujalink_4.png"
-import NIIT from "../assets/Homepage/NIIT_5.png"
-import DigitalFortess from "../assets/Homepage/Digital_fortress_6.png"
-import lagosState from "../assets/Homepage/Lagos_state_7.png"
+import localization from "../assets/Logo Assets/LOcalization Lab 1.svg"
+import policyLab from "../assets/Logo Assets/policyLAB-green-text-Horizontal (3) 1.svg"
+import AfricaPrudential from "../assets/Logo Assets/Africa-Prudentia.svg"
+import kujaLink from "../assets/Logo Assets/Kujalink 1.svg"
+import NIIT from "../assets/Logo Assets/NIIT 1.svg"
+import DigitalFortess from "../assets/Logo Assets/Digital fortress.svg"
+import lagosState from "../assets/Logo Assets/Lagos State 1.svg"
 import Namelogo from "../assets/Homepage/Namelogo.svg"
-import tetrat from "../assets/Homepage/tetrat_8.png"
-import layer from "../assets/Homepage/Layer_9.png"
-import mobileBrand1 from "../assets/Homepage/mobile_brand_1.png"
-import mobileBrand2 from "../assets/Homepage/mobile_brand_2.png"
-import mobileBrand3 from "../assets/Homepage/mobile_brand_3.png"
-import mobileBrand4 from "../assets/Homepage/mobile_brand_4.png"
-import mobileBrand5 from "../assets/Homepage/mobile_brand_5.png"
-import mobileBrand6 from "../assets/Homepage/mobile_brand_6.png"
-import mobileBrand7 from "../assets/Homepage/mobile_brand_7.png"
-
+import tetrat from "../assets/Logo Assets/Tetratinu.svg"
+import kite from "../assets/Logo Assets/Kite.svg"
+import undp from "../assets/Logo Assets/UNDP.svg"
 
 
 
@@ -33,7 +26,13 @@ import { useNavigate } from 'react-router-dom'
 
 
 export default function Homepage() {
+  const [designNumber,setDesignNumber] = useState(0)
+  const designNumberRef = useRef(1000)
+  const [brandNumber,setBrandNumber] = useState(0)
   const [bigScreen, setBigScreen] = useState(true)
+  const missionDivRef = useRef();
+  const brandLogoRef = useRef();
+  const brandLogoRef2 = useRef();
   const brandDivRef = useRef();
   const brandRef = useRef();
   const designProjectRef = useRef()
@@ -42,6 +41,27 @@ export default function Homepage() {
   const meetBiyiCta = useRef()
   const navigate = useNavigate()
   
+  const changeDesignNumber = useCallback(() => {
+        setDesignNumber((prev) => {
+          if(prev > 999){
+            return 1000
+          }else{
+            return prev + 1
+          }
+        });
+  }, [designNumber]);
+
+  const changeBrandNumber = useCallback(() => {
+    setBrandNumber((prev) => {
+      if(prev > 29){
+        return 30
+      }else{
+        return prev + 1
+      }
+    });
+}, [brandNumber]);
+  
+
   function mouseMoveHandler(event){
     const cursorX = event.clientX;
     const cursorY = event.clientY;
@@ -49,34 +69,37 @@ export default function Homepage() {
     const brandContainerLeft = brandRef.current.getBoundingClientRect().left
     const newCursorX = cursorX - brandContainerLeft;
     const newCursorY = cursorY - brandContainerTop;
-    brandDivRef.current.classList.remove("disappear")
-    brandDivRef.current.classList.add("appear")
-    brandDivRef.current.style.top = `${newCursorY}px`;
-    brandDivRef.current.style.left = `${newCursorX}px`;
+    if(window.innerWidth >= 768){
+      setBigScreen(true)
+      brandDivRef.current.classList.remove("disappear")
+      brandDivRef.current.classList.add("appear")
+      brandDivRef.current.style.top = `${newCursorY}px`;
+      brandDivRef.current.style.left = `${newCursorX}px`;
+    }
+    else{
+      setBigScreen(false)
+    }
     // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
 }
 
 function mouseMoveHandler2(event){
-  let NavEl;
-  if(window.innerWidth >= 768){
-     NavEl = document.querySelectorAll(".navbar")[0].getBoundingClientRect().height - 130
-     setBigScreen(true)
-  }
-  else{
-    NavEl = document.querySelectorAll(".navbar")[1].getBoundingClientRect().height - 50
-    setBigScreen(false)
-  }
-  // console.log(NavEl.getBoundingClientRect().height)
   const cursorX = event.clientX;
   const cursorY = event.clientY;
-  const meetbiyiContainerTop = NavEl
+  // const meetbiyiContainerTop = NavEl
   const meetbiyiContainerLeft = meetBiyiRef.current.getBoundingClientRect().left
+  const meetbiyiContainerTop =  meetBiyiRef.current.getBoundingClientRect().top
+  console.log(meetbiyiContainerLeft,meetbiyiContainerTop)
   const newCursorX = cursorX - meetbiyiContainerLeft;
-  const newCursorY = cursorY - meetbiyiContainerTop;
-  meetBiyiCta.current.classList.remove("disappear")
-  meetBiyiCta.current.classList.add("appear")
-  meetBiyiCta.current.style.top = `${newCursorY}px`;
-  meetBiyiCta.current.style.left = `${newCursorX}px`;
+  const newCursorY = cursorY + window.scrollY;
+  if(window.innerWidth >= 768){
+    setBigScreen(true);
+    meetBiyiCta.current.classList.remove("disappear")
+    meetBiyiCta.current.classList.add("appear")
+    meetBiyiCta.current.style.top = `${newCursorY}px`;
+    meetBiyiCta.current.style.left = `${newCursorX}px`;
+  }else{
+    setBigScreen(false)
+  }
   // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
 }
 function mouseLeaveHandler2(event){
@@ -97,11 +120,14 @@ return () =>{
 
   function mouseLeaveHandler(event){
     console.log("mouse left")
-    brandDivRef.current.classList.remove("appear")
-    brandDivRef.current.classList.add("disappear")
-    // brandDivRef.current.style.top = `100%`;
-    // brandDivRef.current.style.left = `50%`;
-    // brandDivRef.current.style.transform = "translateY(-100%) translateX(-50%)"
+    if(window.innerWidth >= 768){
+      setBigScreen(true);
+      brandDivRef.current.classList.remove("appear")
+      brandDivRef.current.classList.add("disappear")
+    }
+    else{
+      setBigScreen(false);
+    }
   }
   useEffect(()=>{
       const brandRefNode = brandRef.current
@@ -120,12 +146,13 @@ return () =>{
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             brandProjectRefNode.classList.add("scrollTo")
+            const intervalId = setInterval(changeBrandNumber, 5000);
           }
           else{
             brandProjectRefNode.classList.remove("scrollTo")
           }
         },{
-          threshold: 0.25
+          threshold: 1
         });
       }
     );
@@ -148,12 +175,14 @@ return () =>{
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             designProjectRefNode.classList.add("scrollTo")
+            const intervalId = setInterval(changeDesignNumber, 0.5);
           }
           else{
             designProjectRefNode.classList.remove("scrollTo")
+            // setDesignNumber(0)
           }
         },{
-          treshold: 0.25
+          treshold: 1
         });
       }
     );
@@ -169,6 +198,93 @@ return () =>{
 
   },[])
 
+  useEffect(()=>{
+    const missionDivRefNode = missionDivRef.current
+    const observe = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log(window.scrollY)
+          }
+          else{
+            console.log(window.scrollY)
+          }
+        },{
+          threshold : 1
+        });
+      }
+    );
+
+    if (missionDivRefNode) {
+      observe.observe(missionDivRefNode);
+    }
+
+    return () => {
+      // Clean up the observer when the component unmounts.
+      observe.disconnect();
+    };
+  },[])
+
+  useEffect(()=>{
+    const brandLogoRefNode = brandLogoRef.current
+    const observe = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if(window.innerWidth >= 768){
+              setBigScreen(true);
+              brandLogoRefNode.classList.add("appear")
+              const intervalId = setInterval(changeBrandNumber, 150);
+            }
+            else{
+              setBigScreen(false)
+            }
+          }
+          else{
+            brandLogoRefNode.classList.remove("appear")
+          }
+        },{
+          threshold : 1
+        });
+      }
+    );
+
+    if (brandLogoRefNode) {
+      observe.observe(brandLogoRefNode);
+    }
+
+    return () => {
+      // Clean up the observer when the component unmounts.
+      observe.disconnect();
+    };
+  },[])
+
+  useEffect(()=>{
+    const brandLogoRef2Node = brandLogoRef2.current
+    const observe = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            brandLogoRef2Node.classList.add("appear")
+          }
+          else{
+            brandLogoRef2Node.classList.remove("appear")
+          }
+        },{
+          threshold : 1
+        });
+      }
+    );
+
+    if (brandLogoRef2Node) {
+      observe.observe(brandLogoRef2Node);
+    }
+
+    return () => {
+      // Clean up the observer when the component unmounts.
+      observe.disconnect();
+    };
+  },[])
 
 
   return (
@@ -186,10 +302,10 @@ return () =>{
             Meet 'Biyi
         </div>
       </div>
-      <div className='homepg-mission'>
+      <div className='homepg-mission' ref={missionDivRef}>
           <div className="homepg-mission-para">
-          <p>My</p>
-          <p>Mission</p>
+          <p>MY</p>
+          <p>MISSION</p>
           </div>
           <img className='mission-img' src={mission} alt='biyi pictoral representation of mission'></img>
           <img className='mobile-mission-img' src={mobileMission}  alt='biyi pictoral representation of mission' />
@@ -197,34 +313,30 @@ return () =>{
       <div className='homepg-brand' ref={brandRef}>
           <div className='homepg-brand-flex'>
             <div ref={designProjectRef}>
-              <p>1000+</p>
+              <p>{designNumber}+</p>
               <p>design projects</p>
             </div>
             <div ref={brandProjectRef}>
-              <p>30+</p>
+              <p>{brandNumber}+</p>
               <p>brands served</p>
             </div>
           </div>
           <div className='homepg-brand-container-main'>
           <div className='homepg-brand-container'>
-            <img src={localization} alt='localization'></img>
-            <img src={policyLab} alt="policy-lab" />
-            <img src={AfricaPrudential} alt='africa-prudential' />
-            <img src={kujaLink} alt='kajalink' />
-            <img src={NIIT} alt='NIIT' />
-            <img src={DigitalFortess} alt='Digital- fortress' />
-            <img src={lagosState} alt='lagos state' />
-            <img src={tetrat} alt='tetrat' />
-            <img src={layer} alt="layer" />
-          </div>
-          <div className='homepg-brand-container-mobile'>
-            <img src={mobileBrand1} alt='biyi brand partnership' />
-            <img src={mobileBrand2} alt='biyi brand partnership' />
-            <img src={mobileBrand3} alt='biyi brand partnership' />
-            <img src={mobileBrand4} alt='biyi brand partnership' />
-            <img src={mobileBrand5} alt='biyi brand partnership' />
-            <img src={mobileBrand6} alt='biyi brand partnership' />
-            <img src={mobileBrand7} alt='biyi brand partnership' />
+            <div ref={brandLogoRef}>
+              <img src={localization} alt='localization hub' />
+              <img src={policyLab} alt='policy lab' />
+              <img src={AfricaPrudential} alt='Africa Presidential' />
+              <img src={kujaLink} alt='kajalink' />
+              <img src={kite} alt='kite' />
+            </div>
+            <div ref={brandLogoRef2}>
+              <img src={NIIT} alt='NIIT' />
+              <img src={DigitalFortess} alt='digital fortress' />
+              <img src={lagosState} alt='lagos state' />
+              <img src={undp} alt='undp' />
+              <img src={tetrat} alt='tetrat' />
+            </div>
           </div>
           </div>
           <div ref={brandDivRef} className='homepg-brand-portfolio'>View Portfolio</div>

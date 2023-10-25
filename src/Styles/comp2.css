@@ -1,13 +1,20 @@
 div.design-it{
     overflow: hidden;
     height: 20.313rem;
-    background: url("../assets/Homepage/Back_drop.png");
+    background-color: #000000;
     background-position: center;
     background-repeat: no-repeat;
     /* background-size: cover; */
     transition: all ease 0.5s;
     position: relative;
     z-index: 3;
+    padding-inline: 25px;
+}
+
+div.design-it.scrollTo{
+    background-color: white;
+    background-clip: content-box;
+
 }
 /* div.design-it:hover{
     background: url("../assets/Homepage/You\ dream\ it_Biyi\ Aroloye.png");
@@ -15,11 +22,8 @@ div.design-it{
     background-repeat: no-repeat;
 } */
 div.container{
-    /* max-width: 20.8125rem; */
-    /* width: 60%; */
-    /* margin: 0 auto; */
     color: var(--primary-color-2);
-    /* padding-block: 1.875rem; */
+    padding-block: 1.875rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,6 +47,10 @@ div.container > div > div >  p:nth-of-type(1){
     flex: 1;
     text-align: center;
 }
+div.design-it.scrollTo > div.container > div > div > p:nth-of-type(1),
+div.design-it.scrollTo > div.container > div > div > p:nth-of-type(2){
+    color: #000000;
+}
 /* div.container:hover  div > p:nth-of-type(1),
 div.container:hover  div > p:nth-of-type(2){
     color: var(--primary-color-1);
@@ -57,10 +65,9 @@ div.container > div > div > p:nth-of-type(2){
 }
 div.lets-go-together{
     position: absolute;
-    /* bottom:20%;
-    right: 10%; */
-    transform: translateX(-50%) translateY(-50%) scale(0);
-    transform: scale(0);
+    top: 60%;
+    left: 70%;
+    transform: translateX(-50%) translateY(-50%);
     color: #060606;
     text-align: center;
     font-size: var(--font-16);
@@ -74,7 +81,12 @@ div.lets-go-together{
     height: 5.0rem;
     cursor: pointer;
 } 
-div.lets-go-together.appear{
+
+div.design-it.scrollTo div.lets-go-together{
+    background-color: #000000;
+    color: #ffffff;
+}      
+/* div.lets-go-together.appear{
     transform:  translateX(-50%) translateY(-50%) scale(0);
     animation: appearance2 1s ease 1 forwards;
 }
@@ -82,15 +94,15 @@ div.lets-go-together.appear{
     to{
         transform:   translateX(-50%) translateY(-50%) scale(1);
     }
-}
+} */
 
 div.lets-go-together.disappear{
-    transform:  translateX(-50%) translateY(-50%) scale(1);
     animation: disappearance2 1s ease 1 forwards;
 }
 @keyframes disappearance2 {
     to{
-        transform:  translateX(-50%) translateY(-50%) scale(0);
+        top: 60%;
+        left: 70%;
     }
 }
 /* div.design:hover div.lets-go-together{
@@ -139,11 +151,17 @@ div.container > div > div:nth-of-type(2).scrollTo{
 @media screen and (min-width: 768px){
     div.design-it{
         height: 29.25rem;
-        background: url("../assets/Homepage/Back_drop.png");
         background-position: center;
         /* background-size: cover; */
         background-repeat: no-repeat;
         transition: all ease 0.5s;
+        background-color: #000000;
+        padding-inline: 50px;
+    }
+    div.design-it.scrollTo{
+        background-color: white;
+        background-clip: content-box;
+
     }
     div.container{
         /* max-width: 20.8125rem; */
@@ -173,6 +191,10 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 1;
         text-align: center;
     }
+    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(1){
+        color: #000000;
+    }
+
     div.container > div > div > p:nth-of-type(2){
         color: var(--primary-color-2);
         font-family: better-yesterday;
@@ -180,6 +202,9 @@ div.container > div > div:nth-of-type(2).scrollTo{
         font-weight: 400;
         flex: 2;
         text-align: center;
+    }
+    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(2){
+        color: #000000;
     }
     div.lets-go-together{
         position: absolute;
@@ -196,17 +221,26 @@ div.container > div > div:nth-of-type(2).scrollTo{
         border-radius: 50%;
         width:6.5625rem;
         height: 6.5625rem;
-    }   
+    }
+    div.design-it.scrollTo div.lets-go-together{
+        background-color: #000000;
+        color: #ffffff;
+    }       
 }
 
 @media screen and (min-width: 1024px){
     div.design-it{
         height: 29.25rem;
-        background: url("../assets/Homepage/Back_drop.png");
         background-position: center;
         background-repeat: no-repeat;
-
         transition: all ease 0.5s;
+        background-color: #000000;
+        padding-inline: 75px
+    }
+    div.design-it.scrollTo{
+        background-color: white;
+        background-clip: content-box;
+
     }
     div.container{
         /* position: relative; */
@@ -236,6 +270,10 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 1;
         text-align: center;
     }
+    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(1){
+        color: #000000;
+    }
+
     div.container > div > div > p:nth-of-type(2){
         color: var(--primary-color-2);
         font-family: better-yesterday;
@@ -244,6 +282,10 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 2;
         text-align: center;
     }
+    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(2){
+        color: #000000;
+    }
+
     div.lets-go-together{
         position: absolute;
         /* bottom:20%;
@@ -260,4 +302,8 @@ div.container > div > div:nth-of-type(2).scrollTo{
         width:6.5625rem;
         height: 6.5625rem;
     }
+    div.design-it.scrollTo div.lets-go-together{
+        background-color: #000000;
+        color: #ffffff;
+    }    
 }

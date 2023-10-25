@@ -58,9 +58,6 @@ export default function Comp() {
     return (
     <div className='footer'>
     <div className='footer-container' ref={footerRef}>
-        <div className='footer-div-1'>
-            <p>designed by <span>‘Biyi Aroloye</span></p>
-        </div>
         <div className='footer-div-2'>
             <ul>
                 <li>Meet ‘Biyi</li>
@@ -69,10 +66,7 @@ export default function Comp() {
                 <li>Insights</li>
             </ul>
         </div>
-        <div className='footer-div-3'>
-            <p>&copy;</p>
-            <p>2023</p>
-        </div>
+  
     </div>
     <div className='mobile-footer-container' ref={mobileFooterRef}>
         <ul>
@@ -89,8 +83,15 @@ export default function Comp() {
         </div> */}
         </div>
     </div>
-    <div className='footer-img'>   
+    <div className='footer-footer'>
+      <div className='footer-div-1'>
+        <p>designed by <span>‘Biyi Aroloye</span></p>
+      </div>
+      <div className='footer-div-3'>
+            <p>&copy;</p>
+            <p>2023</p>
+        </div>
     </div>
-</div>
+  </div>
   )
 }

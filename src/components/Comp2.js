@@ -1,8 +1,9 @@
-import React,{useRef,useEffect} from 'react'
+import React,{useRef,useEffect, useState} from 'react'
 import "../Styles/comp2.css"
 import { useNavigate } from 'react-router-dom';
 
 export default function Comp2() {
+  const [bigScreen,setBigScreen] = useState(true)
   const navigate = useNavigate()
   const designRef = useRef();
   const divRef3 = useRef();
@@ -16,19 +17,27 @@ export default function Comp2() {
     const designContainerLeft = designRef.current.getBoundingClientRect().left
     const newCursorX = cursorX - designContainerLeft;
     const newCursorY = cursorY - designContainerTop;
-    divRef3.current.classList.remove("disappear")
-    divRef3.current.classList.add("appear")
-    divRef3.current.style.top = `${newCursorY}px`;
-    divRef3.current.style.left = `${newCursorX}px`;
-    // console.log(gifContainerLeft, gifContainerTop,cursorX,cursorY,newCursorX,newCursorY)
+    if(window.innerWidth >= 768){
+      setBigScreen(true);
+      divRef3.current.classList.remove("disappear")
+      divRef3.current.classList.add("appear")
+      divRef3.current.style.top = `${newCursorY}px`;
+      divRef3.current.style.left = `${newCursorX}px`;
+    }
+    else{
+      setBigScreen(false)
+    }
 }
 function mouseLeaveHandler2(event){
   const divRef4 =  divRef3.current
-  divRef4.classList.remove("appear")
-  divRef4.classList.add("disappear")
-  // divRef3.current.style.top = "80%";
-  // divRef3.current.style.left = "80%";
-  // divRef3.current.style.transform = "translateY(-50%) translateX(-50%)"
+  if(window.innerWidth >= 768){
+    setBigScreen(true)
+    divRef4.classList.remove("appear")
+    divRef4.classList.add("disappear")
+  }
+  else{
+    setBigScreen(false)
+  }
 }
 
 useEffect(()=>{
@@ -95,6 +104,30 @@ useEffect(()=>{
     }
   },[])
 
+  useEffect(()=>{
+    const designRefNode = designRef.current
+    const observe = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            designRefNode.classList.add("scrollTo")
+          }
+          else{
+            designRefNode.classList.remove("scrollTo")
+          }
+        });
+      }
+    );
+  
+    if (designRefNode) {
+      observe.observe(designRefNode);
+    }
+  
+    return () => {
+      // Clean up the observer when the component unmounts.
+      observe.disconnect();
+    };    
+  },[])
   return (
     <div ref={designRef} className="design-it">
     <div className="container">
@@ -110,7 +143,7 @@ useEffect(()=>{
       </div>
     </div>
     <div ref={divRef3} onClick={()=>{navigate("/letstalk")}} className="lets-go-together">
-      let's go together
+      let's work together
     </div>
   </div>
   )
