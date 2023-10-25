@@ -233,7 +233,7 @@ div.mobile-container > div.cancel{
         text-align: center;
     }
     div.navbar-links > div.links:nth-of-type(5):hover::after{
-        content: 'Insights';
+        content: 'Light Pages';
         font-size: var(--font-12);
         text-align: center;
     }
@@ -374,7 +374,7 @@ div.mobile-container > div.cancel{
         text-align: center;
     }
     div.navbar-links > div.links:nth-of-type(5):hover::after{
-        content: 'Insights';
+        content: 'Light Pages';
         font-size: var(--font-16);
         text-align: center;
     }

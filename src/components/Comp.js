@@ -77,6 +77,10 @@ export default function Comp() {
         </ul>
         <div>
             <p>designed by <span>‘Biyi Aroloye</span></p>
+            <div className='footer-div-5'>
+              <p>&copy;</p>
+              <p>2023</p>
+            </div>
             {/* <div className='footer-div-3'>
             <p>&copy;</p>
             <p>2023</p>
