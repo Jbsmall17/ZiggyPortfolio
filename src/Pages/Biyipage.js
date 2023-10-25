@@ -34,8 +34,13 @@ export default function Biyi() {
     }
   }
   useEffect(()=>{
+    if(window.innerWidth >768){
+      setBigScreen(true)
+    }
+    else{
+      setBigScreen(false)
+    }
     window.addEventListener("resize", checkScreenSize)
-
     return ()=>{
       window.removeEventListener("resize",checkScreenSize)
     }
