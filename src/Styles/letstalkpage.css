@@ -114,16 +114,22 @@ button.button.error{
     border: 1px solid #E00F0F;
     color: #E00F0F;
 }
+
+button.button.error:hover::after{
+    background-color: #E00F0F;
+    color: #fff;
+}
+
 button.button::after{
     content: '';
-    height: 0rem;
-    width: 0rem;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: var(--primary-color-2);
     color: var(--primary-color-1);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%) scale(0);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -133,8 +139,7 @@ button.button::after{
 button.button:hover::after{
     content: 'Proceed';
     font-size: var(--font-16);
-    width: 6.5rem;
-    height: 6.5rem;
+    transform: translateX(-50%) translateY(-50%) scale(1);
 }
 button.button.mount{
     /* margin-top: 14.375rem; */
@@ -183,7 +188,8 @@ div.typewriter4{
 }
 div.typewriter4 > p:first-child{
     font-size: 1.5rem;
-    color: #FFD700;
+    color: #E4BB89;
+    font-weight: 500;
     overflow: hidden;
     white-space: nowrap;
     padding-inline-start: 6.5rem;

@@ -292,6 +292,7 @@ img.bottom-image{
     position: absolute;
     bottom:10%;
     right:10%;
+    transform: rotate(180deg);
 }
 div.hover-div > p{
     color: var(--primary-color-2);

@@ -169,6 +169,7 @@ div.footer-div-5 > p{
         gap: 0.75rem;
     }
     div.footer-div-2 > ul > li{
+        cursor: pointer;
         padding: .5rem;
         display: flex;
         justify-content: center;

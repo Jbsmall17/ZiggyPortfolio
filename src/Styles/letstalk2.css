@@ -14,7 +14,8 @@ div.typewriter2 > p{
     font-size: 1.5rem;
     width: 280px;
     margin: 0 auto;
-    color: #FFD700;
+    color: #E4BB89;
+    font-weight: 500;
     overflow: hidden;
     white-space: nowrap;
     animation: typewriter2 1s steps(30) 1;

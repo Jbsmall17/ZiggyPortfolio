@@ -17,7 +17,7 @@ export default function Navbar({page}) {
         setIsMobileNavbarOpen(prev => !prev)
     }
     function scrollHandler(){
-        if(window.scrollY > 300){
+        if(window.scrollY > 50){
             setIsWindowScrolled(true)
         }
         else{

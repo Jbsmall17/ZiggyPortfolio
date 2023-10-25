@@ -151,52 +151,8 @@ div.mobile-container > div.cancel{
         border-radius: 50%;
         border: 1px solid #fff;
         position: relative;
+        cursor: pointer;
     }
-    /* div.navbar-links > div.links:nth-of-type(1){
-        animation: movingDOwn1 0.5s linear 1 forwards;
-    }
-    @keyframes movingDOwn1 {
-        to{
-            transform: translateY(0);
-        }
-        
-    }
-    div.navbar-links > div.links:nth-of-type(2){
-        animation: movingDOwn2 0.5s linear 0.25s 1 forwards;
-    }
-    @keyframes movingDOwn2 {
-        to{
-            transform: translateY(0);
-        }
-        
-    }
-    div.navbar-links > div.links:nth-of-type(3){
-        animation: movingDOwn3 0.5s linear 0.5s 1 forwards;
-    }
-    @keyframes movingDOwn3 {
-        to{
-            transform: translateY(0);
-        }
-        
-    }
-    div.navbar-links > div.links:nth-of-type(4){
-        animation: movingDOwn4 0.5s linear 0.75s 1 forwards;
-    }
-    @keyframes movingDOwn4 {
-        to{
-            transform: translateY(0);
-        }
-        
-    }
-    div.navbar-links > div.links:nth-of-type(5){
-        animation: movingDOwn5 0.5s linear 1s 1 forwards;
-    }
-    @keyframes movingDOwn5 {
-        to{
-            transform: translateY(0);
-        }
-        
-    } */
 
     div.navbar-links > div.links:nth-of-type(3){
         border: none;

@@ -58,6 +58,10 @@ div.learnmore-container > input{
     animation: inputmoving 1s ease 1s 1 forwards;
 }
 
+div.learnmore-container > input:focus{
+    outline: none;
+}
+
 div.learnmore-container > input.error{
     border: 1px solid #E00F0F;
 }

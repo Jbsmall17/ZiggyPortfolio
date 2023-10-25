@@ -47,7 +47,8 @@ div.typewriter > p{
     font-size: 1.5rem;
     width: 405px;
     margin: 0 auto;
-    color: #FFD700;
+    color: #E4BB89;
+    font-weight: 500;
     overflow: hidden;
     white-space: nowrap;
     animation: typewriter 1s steps(30) 1;
