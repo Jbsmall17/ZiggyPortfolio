@@ -6,13 +6,6 @@ div.lets-talk-page{
 div.lets-talk-page-div{
     color: #878787;
 }
-div.lets-talk-page-div > p{
-    font-size: var(--font-24);
-    text-align: center;
-    font-weight: 600;
-    padding-top: 12.5rem;
-    margin-bottom: 0.5rem;
-}
 div.lets-talk-page-div > div.circle-container{
     display: flex;
     flex-direction: row;
@@ -69,7 +62,7 @@ div.socials-container > a:nth-of-type(5) svg:hover > path{
         position: absolute;
         right:0;
         left:50%;
-        top: 90%;
+        top: 88%;
         height: fit-content;
         transform: translateY(0%) translateX(-50%);
         display: flex;
@@ -212,4 +205,20 @@ div.typewriter4 > p:first-child{
     to {
         width: 100%; /* Reveal the entire text */
     }
+}
+
+div.lets-talk-page-div > div.circle-container{
+    padding-top: 8.5rem;
+}   
+
+@media screen and (min-width: 768px) {
+    div.lets-talk-page-div > div.circle-container{
+        padding-top: 8.5rem;
+    }    
+}
+
+@media screen and (min-width: 1024px) {
+    div.lets-talk-page-div > div.circle-container{
+        padding-top: 12.5rem;
+    }    
 }

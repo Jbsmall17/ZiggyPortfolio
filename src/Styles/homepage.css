@@ -115,7 +115,7 @@ div.homepg-mission > div{
 div.homepg-brand{
     overflow: hidden;
     width: 100%;
-    height: 450px;
+    height: 550px;
     position: relative;
     Z-index: 3;
     background-color: #000;
@@ -199,7 +199,7 @@ div.homepg-brand-portfolio{
     position: absolute;
     font-weight: 600;
     left: 50%;
-    top: 85%;
+    top: 70%;
     transform: translateX(-50%) translateY(-50%);
     width: 7.188rem;
     height: 7.188rem;
@@ -437,7 +437,7 @@ div.homepg-mission > div{
 }
 div.homepg-brand{
     width: 100%;
-    height: 550px;
+    height: 650px;
     position: relative;
     Z-index: 3;
     background-color: #000;
@@ -454,15 +454,21 @@ div.homepg-brand-container > div{
     display:flex;
     flex-direction: row;
     align-items: center;
-    gap:0;
     flex-wrap: wrap;
-    justify-content: space-around;
+    gap:0;
+    justify-content:center;
 }
-/* div.homepg-brand-container > div > img{
-    transform: scale(0.85);
-} */
+
 div.homepg-brand-container > div:nth-of-type(1){
-    margin-block-end: 1.875rem;
+    padding-inline: 3%;
+}
+
+div.homepg-brand-container > div:nth-of-type(2){
+    padding-inline: 5%;
+}
+
+div.homepg-brand-container > div > img{
+    transform: scale(0.85);
 }
 
 /* div.homepg-brand-container > img{ 
@@ -474,6 +480,7 @@ div.homepg-brand-portfolio{
     bottom: 0;*/
     width: 7.188rem;
     height: 7.188rem;
+    top:75%;
     background-color: #FFF;
     border-radius: 50%;
     display: flex;
@@ -608,7 +615,7 @@ div.homepg-mission > img.mission-img{
 }
 div.homepg-brand{
     width: 100%;
-    height: 700px;
+    height: 800px;
     position: relative;
     Z-index: 3;
     background-color: #000;
@@ -642,13 +649,16 @@ div.homepg-brand-container > div{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 div.homepg-brand-container > div:nth-of-type(1){
     margin-block-end: 3.125rem;
+    padding-inline: 10%;
 }
 
-
+div.homepg-brand-container > div:nth-of-type(2){
+    padding-inline: 13%;
+}
 /*
 @keyframes motion {
  from{

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
 import Comp2 from '../components/Comp2'
-import biyi from '../assets/Biyipage/biyi_aroloye.png'
+import biyi from '../assets/Biyipage/king_of_design_1.png'
 import biyiMobile from "../assets/Biyipage/araloye_mobile.png"
 import design from "../assets/Logo Assets/designBiyi.png"
 import consult from "../assets/Logo Assets/consultingBiyi.png"
@@ -24,7 +24,8 @@ import "../Styles/biyipage.css"
 export default function Biyi() {
   const navigate = useNavigate()
   const [bigScreen,setBigScreen] = useState(true)
-  console.log(bigScreen)
+  const meetbiyi = useRef()
+  const servicesRef = useRef()
   function checkScreenSize(){
     if(window.innerWidth >768){
       setBigScreen(true)
@@ -46,20 +47,73 @@ export default function Biyi() {
     }
   },[])
 
+  useEffect(()=>{
+    const meetbiyiNode = meetbiyi.current
+    const observe = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            meetbiyiNode.classList.add("scrollTo")
+          }
+          else{
+            meetbiyiNode.classList.remove("scrollTo")
+          }
+        },{
+          treshold: 0.25
+        });
+      }
+    );
+
+    if (meetbiyiNode) {
+      observe.observe(meetbiyiNode);
+    }
+
+    return () => {
+      observe.disconnect();
+    };
+
+  },[])
+
+  useEffect(()=>{
+      const servicesRefNode = servicesRef.current;
+
+      const observe = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              servicesRefNode.classList.add("scrollTo")
+            }
+            else{
+              servicesRefNode.classList.remove("scrollTo")
+            }
+          },{
+            treshold: 0.25
+          });
+        }
+      );
+  
+      if (servicesRefNode) {
+        observe.observe(servicesRefNode);
+      }
+  
+      return () => {
+        observe.disconnect();
+      };
+  },[])
 
   return (
     <div className='biyipage'>
       <Navbar page={"biyi"} />
-      <div className='meet-biyi'>
-        <div className='meet-biyi-01'>
+      <div ref={meetbiyi} className='meet-biyi'>
+        <div  className='meet-biyi-01'>
           <img src={biyi} className='desktop-image' loading='lazy' alt='a picture of biyi aroloye' />
           <img src={biyiMobile} className='mobile-image' loading='lazy' alt='a picture of biyi aroloye' />
         </div>
         <div className='meet-biyi-02'>
           <p>
-              Biyi Aroloye is an ace  trans-disciplinary designer and strategist, 
-              specializing in the realms of visual design, brand strategy, 
-              and digital product design- strategy. 
+            ‘Biyi Aroloye is an expert transdisciplinary designer and strategist, 
+            specializing in the realms of visual design, brand strategy and 
+            digital product design-strategy.
           </p>
           <p>
               With a track record of serving over 30 brands and executing over 1000 design projects, 
@@ -88,7 +142,7 @@ export default function Biyi() {
       {
         bigScreen
         ?
-        (<div className='services-container'>
+        (<div ref={servicesRef} className='services-container'>
         <div className='design'>
           <img src={design} alt="" />
           <div className='hover-div'>

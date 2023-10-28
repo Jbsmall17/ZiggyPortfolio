@@ -7,16 +7,17 @@ export default function Comp2() {
   const navigate = useNavigate()
   const designRef = useRef();
   const divRef3 = useRef();
+  const divRef5 = useRef();
   const dreamItRef = useRef();
   const designItRef = useRef();  
 
   function mouseMoveHandler3(event){
     const cursorX = event.clientX;
     const cursorY = event.clientY;
-  const designContainerTop = designRef.current.getBoundingClientRect().top
-    const designContainerLeft = designRef.current.getBoundingClientRect().left
-    const newCursorX = cursorX - designContainerLeft;
-    const newCursorY = cursorY - designContainerTop;
+  const divContainerTop = divRef5.current.getBoundingClientRect().top
+    const divContainerLeft = divRef5.current.getBoundingClientRect().left
+    const newCursorX = cursorX - divContainerLeft;
+    const newCursorY = cursorY - divContainerTop;
     if(window.innerWidth >= 768){
       setBigScreen(true);
       divRef3.current.classList.remove("disappear")
@@ -92,17 +93,17 @@ useEffect(()=>{
 
 },[])
 
-  useEffect(()=>{
-    const designNode = designRef.current
+useEffect(()=>{
+  const divNode = divRef5.current
 
-    designNode.addEventListener("mousemove", mouseMoveHandler3)
-    designNode.addEventListener("mouseleave", mouseLeaveHandler2)
+  divNode.addEventListener("mousemove", mouseMoveHandler3)
+  divNode.addEventListener("mouseleave", mouseLeaveHandler2)
     
-    return () =>{
-      designNode.removeEventListener("mousemove", mouseMoveHandler3)
-      designNode.removeEventListener("mouseleave", mouseLeaveHandler2)
-    }
-  },[])
+  return () =>{
+    divNode.removeEventListener("mousemove", mouseMoveHandler3)
+    divNode.removeEventListener("mouseleave", mouseLeaveHandler2)
+  }
+},[])
 
   useEffect(()=>{
     const designRefNode = designRef.current
@@ -129,22 +130,24 @@ useEffect(()=>{
     };    
   },[])
   return (
-    <div ref={designRef} className="design-it">
-    <div className="container">
-      <div>
-      <div ref={dreamItRef}>
-        <p>You</p>
-        <p>dream it</p>
-      </div>
-      <div ref={designItRef}>
-        <p>I</p>
-        <p>design it</p>
-      </div>
+    <div  className="design-it" ref={designRef}>
+      <div ref={divRef5}>
+        <div className="container">
+          <div>
+            <div ref={dreamItRef}>
+              <p>You</p>
+              <p>dream it</p>
+            </div>
+            <div ref={designItRef}>
+              <p>I</p>
+              <p>design it</p>
+            </div>
+          </div>
+        </div>
+        <div ref={divRef3} onClick={()=>{navigate("/letstalk")}} className="lets-go-together">
+          let's work together
+        </div>
       </div>
     </div>
-    <div ref={divRef3} onClick={()=>{navigate("/letstalk")}} className="lets-go-together">
-      let's work together
-    </div>
-  </div>
   )
 }

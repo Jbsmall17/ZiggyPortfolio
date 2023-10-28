@@ -28,8 +28,14 @@ export default function Learnmore() {
         <Navbar />
         <div className='learnmore-container'>
           { count== 1 ? 
-            <p className='gracias'>Gracias! Biyi will reach out to you shortly</p> 
-            :<p className='care'>Care to know more?</p>}
+              <div className='gracias-container'>
+                <p className='gracias'>Gracias! Biyi will reach out to you shortly</p> 
+              </div>
+            :
+              <div className='care-container'>
+                <p className='care'>Care to know more?</p>
+              </div>
+            }
           {count == 0 
             && 
               (

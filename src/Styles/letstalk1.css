@@ -36,7 +36,7 @@ div.typewriter{
     margin: 0 auto;
     margin-block: 0.5rem;
     /* text-align: center; */
-    padding: 3rem 0rem;
+    padding: 3rem 2rem;
     /* justify-content: center; */
     max-width: 463px;
     width: 95%;
@@ -46,7 +46,6 @@ div.typewriter{
 div.typewriter > p{
     font-size: 1.5rem;
     width: 405px;
-    margin: 0 auto;
     color: #E4BB89;
     font-weight: 500;
     overflow: hidden;
@@ -61,7 +60,7 @@ div.typewriter > p{
         width: 405px; /* Reveal the entire text */
     }
 }
-@media screen and (max-width:425px) {
+@media screen and (max-width:426px) {
     div.typewriter{
         margin-block: 0.5rem;
         /* text-align: center; */

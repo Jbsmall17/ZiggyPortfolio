@@ -27,7 +27,7 @@ div.typewriter3 > p{
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     div.typewriter3{
         margin: 0 auto;
         margin-block: 0.5rem;
@@ -36,7 +36,7 @@ div.typewriter3 > p{
     }
     div.typewriter3 > p{
         font-size: 1.0rem;
-        width:215px
+        width:225px
     }
 
     @keyframes typewriter3 {

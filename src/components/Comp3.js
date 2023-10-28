@@ -13,8 +13,8 @@ export default function Comp3() {
         </div>
         </div>
     </div>
-    <div className='footer-img1'>   
-    </div>
+    {/* <div className='footer-img1'>   
+    </div> */}
     </div>
   )
 }

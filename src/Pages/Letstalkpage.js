@@ -58,7 +58,6 @@ export default function Letstalkpage() {
     <div className='lets-talk-page'>
       <Navbar page={"letstalk"} />
         <div className='lets-talk-page-div'>
-          <p>Let’s talk service</p>
           <div className='circle-container'>
             <div  className={count >= 1 ? "clicked": null}></div>
             <div  className={count > 1 ? "clicked": null}></div>

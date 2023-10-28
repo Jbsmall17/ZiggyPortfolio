@@ -1,29 +1,26 @@
 div.design-it{
     overflow: hidden;
+    position: relative;
     height: 20.313rem;
     background-color: #000000;
     background-position: center;
     background-repeat: no-repeat;
     /* background-size: cover; */
     transition: all ease 0.5s;
-    position: relative;
     z-index: 3;
-    padding-inline: 25px;
+    padding-inline: 5%;
 }
 
-div.design-it.scrollTo{
-    background-color: white;
-    background-clip: content-box;
-
+div.design-it.scrollTo > div{
+    position: relative;
+    background-color: #ffffff;
+    border-radius:8px; 
+    overflow: hidden;
 }
-/* div.design-it:hover{
-    background: url("../assets/Homepage/You\ dream\ it_Biyi\ Aroloye.png");
-    background-position: center;
-    background-repeat: no-repeat;
-} */
+
 div.container{
     color: var(--primary-color-2);
-    padding-block: 1.875rem;
+    padding-block: 2.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -47,8 +44,8 @@ div.container > div > div >  p:nth-of-type(1){
     flex: 1;
     text-align: center;
 }
-div.design-it.scrollTo > div.container > div > div > p:nth-of-type(1),
-div.design-it.scrollTo > div.container > div > div > p:nth-of-type(2){
+div.design-it.scrollTo  div.container > div > div > p:nth-of-type(1),
+div.design-it.scrollTo  div.container > div > div > p:nth-of-type(2){
     color: #000000;
 }
 /* div.container:hover  div > p:nth-of-type(1),
@@ -65,20 +62,20 @@ div.container > div > div > p:nth-of-type(2){
 }
 div.lets-go-together{
     position: absolute;
-    top: 60%;
-    left: 70%;
+    top: 80%;
+    left: 85%;
     transform: translateX(-50%) translateY(-50%);
     color: #060606;
     text-align: center;
-    font-size: var(--font-16);
+    font-size: 12px;
     font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--primary-color-2);
     border-radius: 50%;
-    width:5.0rem;
-    height: 5.0rem;
+    width:4.5rem;
+    height: 4.5rem;
     cursor: pointer;
 } 
 
@@ -101,8 +98,8 @@ div.lets-go-together.disappear{
 }
 @keyframes disappearance2 {
     to{
-        top: 60%;
-        left: 70%;
+        top: 80%;
+        left: 85%;
     }
 }
 /* div.design:hover div.lets-go-together{
@@ -156,12 +153,7 @@ div.container > div > div:nth-of-type(2).scrollTo{
         background-repeat: no-repeat;
         transition: all ease 0.5s;
         background-color: #000000;
-        padding-inline: 50px;
-    }
-    div.design-it.scrollTo{
-        background-color: white;
-        background-clip: content-box;
-
+        padding-inline: 5%;
     }
     div.container{
         /* max-width: 20.8125rem; */
@@ -191,7 +183,7 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 1;
         text-align: center;
     }
-    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(1){
+    div.design-it.scrollTo  div.container > div > div > p:nth-of-type(1){
         color: #000000;
     }
 
@@ -203,7 +195,7 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 2;
         text-align: center;
     }
-    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(2){
+    div.design-it.scrollTo  div.container > div > div > p:nth-of-type(2){
         color: #000000;
     }
     div.lets-go-together{
@@ -235,12 +227,7 @@ div.container > div > div:nth-of-type(2).scrollTo{
         background-repeat: no-repeat;
         transition: all ease 0.5s;
         background-color: #000000;
-        padding-inline: 75px
-    }
-    div.design-it.scrollTo{
-        background-color: white;
-        background-clip: content-box;
-
+        padding-inline: 10%;
     }
     div.container{
         /* position: relative; */
@@ -270,7 +257,7 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 1;
         text-align: center;
     }
-    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(1){
+    div.design-it.scrollTo  div.container > div > div > p:nth-of-type(1){
         color: #000000;
     }
 
@@ -282,7 +269,7 @@ div.container > div > div:nth-of-type(2).scrollTo{
         flex: 2;
         text-align: center;
     }
-    div.design-it.scrollTo > div.container > div > div > p:nth-of-type(2){
+    div.design-it.scrollTo  div.container > div > div > p:nth-of-type(2){
         color: #000000;
     }
 

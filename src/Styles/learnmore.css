@@ -2,19 +2,46 @@ div.learnmore-container{
     padding-block-start: 230px;
 }
 
-div.learnmore-container > p{
-    max-width: 250px;
-    width: 70%;
+@media screen and (max-width: 769px) {
+    div.learnmore-container{
+        padding-block-start: 180px;
+    }   
+}
+
+@media screen and (max-width: 426px) {
+    div.learnmore-container{
+        padding-block-start: 160px;
+    }   
+}
+
+div.learnmore-container  p{
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    margin: 0 auto;
     color: #E4BB89;
     font-family: Poppins;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 70px;
 }
-div.learnmore-container > p.care{
+@media screen and (max-width: 426px) {
+    div.learnmore-container  p{
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }   
+}
+div.care-container{
+    width:250px; 
+    margin:0 aut0;
+} 
+@media screen and (max-width:426px) {
+    div.care-container{
+        width:180px; 
+        margin:0 auto;
+    } 
+}
+div.learnmore-container  p.care{
     overflow: hidden;
     white-space: nowrap;
     animation: paratype 1s steps(30) 1;
@@ -27,13 +54,29 @@ div.learnmore-container > p.care{
         width: 250px; /* Reveal the entire text */
     }
 }
-div.learnmore-container > p.gracias{
-    max-width: 500px;
+
+@media screen and (max-width:426px) {
+    @keyframes paratype {
+        from {
+            width: 0; /* Start with no text */
+        }
+        to {
+            width: 180px; /* Reveal the entire text */
+        }
+    }
+}
+div.gracias-container{
+    width:500px; 
+    margin:0 auto;
+    max-width:85%;
+}
+div.learnmore-container  p.gracias{
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     animation: paratype2 1s steps(30) 1;
 }
-@keyframes paratype {
+@keyframes paratype2 {
     from {
         width: 0; /* Start with no text */
     }
