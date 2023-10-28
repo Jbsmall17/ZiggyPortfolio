@@ -82,7 +82,7 @@ export default function LetTalk1({ validity, state, changeState}) {
           value={selectValue}
           name='selectValue'
         >
-            <option value="">select Country</option>
+          <option value="">select Country</option>
         </select>
     </div>
   )

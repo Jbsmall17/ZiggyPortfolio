@@ -33,7 +33,7 @@ div.learnmore-container  p{
 }
 div.care-container{
     width:250px; 
-    margin:0 aut0;
+    margin:0 auto;
 } 
 @media screen and (max-width:426px) {
     div.care-container{
@@ -136,10 +136,10 @@ div.learnmore-div, div.learnmore-div2{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 2px solid #fff;
-    color: #fff;
+    border: 1px solid #E4BB89;
+    color: #E4BB89;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     margin: 0 auto 120px auto;
 

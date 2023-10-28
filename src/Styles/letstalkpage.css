@@ -82,8 +82,8 @@ button.button{
     justify-content: center;
     align-items: center;
     margin: 0 auto 3.8125rem auto;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid #E4BB89;
+    color: #E4BB89;
     font-size: var(--font-16);
     cursor: pointer;
     transform: translateY(150%);

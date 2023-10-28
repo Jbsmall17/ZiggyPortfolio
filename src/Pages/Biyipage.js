@@ -45,7 +45,7 @@ export default function Biyi() {
     return ()=>{
       window.removeEventListener("resize",checkScreenSize)
     }
-  },[])
+  },[bigScreen])
 
   useEffect(()=>{
     const meetbiyiNode = meetbiyi.current
