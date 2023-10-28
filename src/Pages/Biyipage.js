@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Comp from '../components/Comp'
 import Comp2 from '../components/Comp2'
-import biyi from '../assets/Biyipage/king_of_design_1.png'
+import biyi from "../assets/Biyipage/king_of_design_1.png"
 import biyiMobile from "../assets/Biyipage/araloye_mobile.png"
 import design from "../assets/Logo Assets/designBiyi.png"
 import consult from "../assets/Logo Assets/consultingBiyi.png"
