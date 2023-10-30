@@ -26,11 +26,7 @@ export default function Learnmore() {
 
   function handleClick2(){
     navigate("/")
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior : "smooth"
-    })
+    window.scrollTo(0,0)
   }
   return (
     <div className='learnmore-page'>

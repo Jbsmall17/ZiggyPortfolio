@@ -145,7 +145,7 @@ div.learnmore-div, div.learnmore-div2{
 
 }
 div.learnmore-div{
-    transform: translateY(200%);
+    transform: translateY(100%);
     visibility: hidden;
     animation: divmoving 1s ease 1.5s 1 forwards;
 }
@@ -165,7 +165,7 @@ div.learnmore-div.error{
     color: #E00F0F;
 }
 div.learnmore-div2{
-    transform: translateY(250%);
+    transform: translateY(100%);
     visibility: hidden;
     animation: divmoving2 1s ease 1s 1 forwards;
 }

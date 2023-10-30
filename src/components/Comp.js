@@ -5,6 +5,12 @@ export default function Comp() {
     const navigate = useNavigate()
     const footerRef = useRef();
     const mobileFooterRef = useRef()
+    
+    function handleClick(){
+      navigate("/biyi")
+      window.scrollTo(0,0)
+    }
+
     useEffect(()=>{
         const footerRefNode = footerRef.current
         const observe = new IntersectionObserver(
@@ -60,7 +66,7 @@ export default function Comp() {
     <div className='footer-container' ref={footerRef}>
         <div className='footer-div-2'>
             <ul>
-                <li>Meet ‘Biyi</li>
+                <li onClick={handleClick}>Meet ‘Biyi</li>
                 <li>Portfolio</li>
                 <li>Products</li>
                 <li>Insights</li>
@@ -70,7 +76,7 @@ export default function Comp() {
     </div>
     <div className='mobile-footer-container' ref={mobileFooterRef}>
         <ul>
-            <li onClick={()=>navigate("/biyi")}>Meet ‘Biyi</li>
+            <li onClick={handleClick}>Meet ‘Biyi</li>han
             <li>Portfolio</li>
             <li>Products</li>
             <li>Insights</li>
@@ -81,10 +87,6 @@ export default function Comp() {
               <p>&copy;</p>
               <p>2023</p>
             </div>
-            {/* <div className='footer-div-3'>
-            <p>&copy;</p>
-            <p>2023</p>
-        </div> */}
         </div>
     </div>
     <div className='footer-footer'>
