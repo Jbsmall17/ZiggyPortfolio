@@ -3,7 +3,7 @@ import "../Styles/services.css"
 
 export default function Services({servicesState,func}) {
   return (
-    <div className={ servicesState ? 'services-container moved' : 'services-container'}>
+    <div className={ servicesState ? 'servicess-container moved' : 'servicess-container'}>
         <svg onClick={()=>func(false)} className='cancel-svg' xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
             <path d="M17 0C7.61175 0 0 7.61175 0 17C0 26.3882 7.61175 34 17 34C26.3882 34 34 26.3882 34 17C34 7.61175 26.3882 0 17 0ZM24.7917 22.7857L22.8041 24.7917L17.0099 18.989L11.1987 24.7917L9.20833 22.8012L15.0068 17.0042L9.20833 11.1987L11.1987 9.20833L16.9901 15.0011L22.7857 9.20833L24.7917 11.1959L18.9947 16.9858L24.7917 22.7857Z" fill="black"/>
         </svg>

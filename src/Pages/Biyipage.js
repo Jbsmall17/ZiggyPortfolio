@@ -26,6 +26,25 @@ export default function Biyi() {
   const [bigScreen,setBigScreen] = useState(true)
   const meetbiyi = useRef()
   const servicesRef = useRef()
+
+  function handleClick(){
+    navigate("/letstalk")
+    window.scrollTo({
+      top:0,
+      left:0,
+      behavior: "smooth"
+    })
+  }
+
+  function handleClick2(){
+    navigate("/learnmore")
+    window.scrollTo({
+      top:0,
+      left:0,
+      behavior: "smooth"
+    })
+  }
+
   function checkScreenSize(){
     if(window.innerWidth >768){
       setBigScreen(true)
@@ -82,9 +101,11 @@ export default function Biyi() {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               servicesRefNode.classList.add("scrollTo")
+              console.log("seen")
             }
             else{
               servicesRefNode.classList.remove("scrollTo")
+              console.log("seen")
             }
           },{
             treshold: 0.25
@@ -132,7 +153,7 @@ export default function Biyi() {
           Like a key ingredient in a recipe, Biyi is a valuable asset in any organization.
           </p>
         </div>
-        <div className='learnmore' onClick={()=>{navigate("/learnmore")}}>
+        <div className='learnmore' onClick={handleClick2}>
           <span>learn more</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
             <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>
@@ -151,7 +172,7 @@ export default function Biyi() {
             <p>Design</p>
             <p>'ur</p>
             <p>Dreams</p>
-            <div className='div-circle'>
+            <div onClick={handleClick} className='div-circle'>
               <span>Let's Talk</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
                 <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>
@@ -167,7 +188,7 @@ export default function Biyi() {
             <p>Achieve</p>
             <p>'ur</p>
             <p>Aim</p>
-            <div className='div-circle'>
+            <div  onClick={handleClick} className='div-circle'>
               <span>Let's Talk</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
                 <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>
@@ -183,7 +204,7 @@ export default function Biyi() {
             <p>Illuminate</p>
             <p>'ur</p>
             <p>Intellect</p>
-            <div className='div-circle'>
+            <div  onClick={handleClick} className='div-circle'>
               <span>Let's Talk</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
                 <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>
@@ -212,7 +233,7 @@ export default function Biyi() {
               <p>Design</p>
               <p>'ur</p>
               <p>Dreams</p>
-              <div className='div-circle'>
+              <div  onClick={handleClick} className='div-circle'>
                 <span>Let's Talk</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
                   <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>
@@ -228,7 +249,7 @@ export default function Biyi() {
               <p>Achieve</p>
               <p>'ur</p>
               <p>Aim</p>
-              <div className='div-circle'>
+              <div onClick={handleClick} className='div-circle'>
                 <span>Let's Talk</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
                   <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>
@@ -238,13 +259,13 @@ export default function Biyi() {
             </SwiperSlide>
             <SwiperSlide className='consulting'>
             <img src={consult} alt="" />
-            <div className='hover-div'>
+            <div  className='hover-div'>
               <img className='top-image' src={knight} alt='knight' />
               <img className='bottom-image' src={knight} alt='knight' />
               <p>Illuminate</p>
               <p>'ur</p>
               <p>Intellect</p>
-              <div className='div-circle'>
+              <div onClick={handleClick} className='div-circle'>
                 <span>Let's Talk</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="15" viewBox="0 0 23 15" fill="none">
                   <path d="M22.105 7.50002C22.105 7.32952 22.0019 7.10313 21.8973 6.99326L16.0027 0.730038C15.7275 0.445508 15.2816 0.412534 14.9608 0.7013C14.6739 0.959451 14.6668 1.46293 14.932 1.74326L19.6638 6.76304L0.736836 6.76304C0.329881 6.76304 -3.23774e-07 7.09292 -3.05985e-07 7.49988C-2.88197e-07 7.90683 0.329881 8.23675 0.736836 8.23675L19.6638 8.23675L14.932 13.2565C14.6668 13.5368 14.6856 14.0279 14.9608 14.2984C15.2513 14.584 15.7317 14.5586 16.0027 14.2697L21.8973 8.00653C22.0705 7.83665 22.1021 7.67303 22.105 7.50002Z" fill="#E4BB89"/>

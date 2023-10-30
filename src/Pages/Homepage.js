@@ -85,7 +85,7 @@ export default function Homepage() {
 function mouseMoveHandler2(event){
   const cursorX = event.clientX;
   const cursorY = event.clientY;
-  // const meetbiyiContainerTop = NavEl
+
   const meetbiyiContainerLeft = meetBiyiRef.current.getBoundingClientRect().left
   const meetbiyiContainerTop =  meetBiyiRef.current.getBoundingClientRect().top
   console.log(meetbiyiContainerLeft,meetbiyiContainerTop)
@@ -104,8 +104,10 @@ function mouseMoveHandler2(event){
 }
 function mouseLeaveHandler2(event){
   const meetBiyiCta2 = meetBiyiCta.current
-  meetBiyiCta2.classList.remove("appear")
-  meetBiyiCta2.classList.add("disappear")
+  if(meetBiyiCta2){
+    meetBiyiCta2.classList.remove("appear")
+    meetBiyiCta2.classList.add("disappear")
+  }
 }
 
 useEffect(()=>{

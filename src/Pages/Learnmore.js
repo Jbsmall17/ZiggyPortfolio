@@ -23,6 +23,15 @@ export default function Learnmore() {
       setValidity(false);
     }
   }
+
+  function handleClick2(){
+    navigate("/")
+    window.scrollTo({
+      left: 0,
+      top: 0,
+      behavior : "smooth"
+    })
+  }
   return (
     <div className='learnmore-page'>
         <Navbar />
@@ -49,7 +58,7 @@ export default function Learnmore() {
               )
           }
           {count == 1
-            ? <div className='learnmore-div2' onClick={()=> navigate("/")}>
+            ? <div className='learnmore-div2' onClick={handleClick2}>
               Home
             </div>
            : (

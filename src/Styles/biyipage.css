@@ -249,11 +249,11 @@ div.services-container{
 }
 
 @media screen and (max-width:768px) {
-    div.services-container{
+    /* div.services-container{
         flex-wrap: nowrap;
         justify-content: start;
         padding-inline: 20px;
-    }
+    } */
 
     .react-slideshow-container {
         display: flex;

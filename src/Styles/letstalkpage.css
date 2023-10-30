@@ -115,8 +115,8 @@ button.button.error:hover::after{
 
 button.button::after{
     content: '';
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 90%;
+    height: 90%;
     background-color: var(--primary-color-2);
     color: var(--primary-color-1);
     position: absolute;
@@ -143,12 +143,14 @@ button.button.mount::after{
 div.typewriter4{
     margin: 0 auto;
     margin-block: 0.5rem;
-    padding: 3rem 2.5rem;
-    max-width: 665px;
-    width: 70%;
+    padding: 3rem 0rem;
+    max-width: 485px;
+    width: 77%;
     background: rgba(24, 24, 24, 0.25);
     border-radius: .3125rem;
 }
+
+
 /* div.typewriter4 > p:nth-of-type(2){
     font-size: 1.5rem;
     color: #FFD700;
@@ -161,16 +163,17 @@ div.typewriter4{
     div.typewriter4{
         margin: 0 auto;
         margin-block: 0.5rem;
-        padding: 3rem 3rem;
-        max-width: 463px;
-        width: 80%;
+        padding: 3rem 0rem;
         background: rgba(24, 24, 24, 0.25);
-        border-radius: .3125rem;
     }
-    /* div.typewriter4 > p:nth-of-type(2){
-        font-size: 1.0rem;
-    } */
 }
+
+@media screen and (max-width: 376px) {
+    div.typewriter4{
+        width: 75%;
+    }    
+}
+
 @keyframes typewriter4 {
     from {
         width: 0; /* Start with no text */
@@ -185,7 +188,6 @@ div.typewriter4 > p:first-child{
     font-weight: 500;
     overflow: hidden;
     white-space: nowrap;
-    padding-inline-start: 6.5rem;
     animation: typewriter5 1s steps(30) 1;
 }
 @media screen and (max-width:425px) {
@@ -194,7 +196,6 @@ div.typewriter4 > p:first-child{
         color: #FFD700;
         /* overflow: hidden; */
         white-space: nowrap;
-        padding-inline-start: 3.5rem;
         animation: typewriter5 1s steps(30) 1;
     }    
 }
@@ -205,6 +206,13 @@ div.typewriter4 > p:first-child{
     to {
         width: 100%; /* Reveal the entire text */
     }
+}
+
+
+@media screen and (max-width:376px) {
+    div.typewriter4 > p:first-child{
+        font-size: 0.75rem;
+    }    
 }
 
 div.lets-talk-page-div > div.circle-container{
